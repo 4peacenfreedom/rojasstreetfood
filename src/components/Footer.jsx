@@ -38,7 +38,7 @@ function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold text-lg mb-4">Enlaces Rápidos</h4>
+            <h4 className="text-white font-display text-2xl mb-4">Enlaces Rápidos</h4>
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <li>
                 <a href="/#inicio" className="text-gray-400 hover:text-red-500 transition-colors">
@@ -65,7 +65,7 @@ function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-white font-semibold text-lg mb-4">Contacto</h4>
+            <h4 className="text-white font-display text-2xl mb-4">Contacto</h4>
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <li className="flex items-center text-gray-400" style={{ gap: '0.75rem' }}>
                 <Phone className="w-5 h-5 text-red-500" />
@@ -102,7 +102,7 @@ function Footer() {
 
           {/* Social Media */}
           <div>
-            <h4 className="text-white font-semibold text-lg mb-4">Síguenos</h4>
+            <h4 className="text-white font-display text-2xl mb-4">Síguenos</h4>
             <div className="flex" style={{ gap: '1rem' }}>
               <a
                 href={instagramUrl}
