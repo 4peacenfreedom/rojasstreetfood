@@ -58,7 +58,8 @@ function Testimonials() {
         {/* Facebook Connect Button */}
         <div className="text-center mt-12">
           <button
-            className="inline-flex items-center space-x-3 bg-[#1877F2] hover:bg-[#166FE5] text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/30"
+            className="inline-flex items-center bg-[#1877F2] hover:bg-[#166FE5] text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-lg"
+            style={{ gap: '0.75rem' }}
             aria-label="Conectar con Facebook"
           >
             <Facebook className="w-6 h-6" />
@@ -80,7 +81,7 @@ function TestimonialCard({ testimonial }) {
   return (
     <div className="bg-[#242424] rounded-2xl p-6 h-full card-hover">
       {/* Header with avatar and info */}
-      <div className="flex items-center space-x-4 mb-4">
+      <div className="flex items-center mb-4" style={{ gap: '1rem' }}>
         <img
           src={testimonial.avatar}
           alt={testimonial.name}
@@ -90,7 +91,7 @@ function TestimonialCard({ testimonial }) {
         <div>
           <h4 className="text-white font-semibold">{testimonial.name}</h4>
           {/* Rating stars */}
-          <div className="flex space-x-1">
+          <div className="flex" style={{ gap: '0.25rem' }}>
             {[...Array(5)].map((_, i) => (
               <Star
                 key={i}

@@ -71,7 +71,8 @@ function Hero() {
                   {/* CTA Button */}
                   <button
                     onClick={scrollToMenu}
-                    className="btn-primary text-lg px-8 py-4 rounded-full inline-flex items-center space-x-2 animate-pulse-glow"
+                    className="btn-primary text-lg px-8 py-4 rounded-full inline-flex items-center animate-pulse-glow"
+                    style={{ gap: '0.5rem' }}
                   >
                     <span>{slide.cta}</span>
                   </button>

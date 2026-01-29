@@ -33,16 +33,17 @@ function Menu() {
 
         {/* Category Tabs */}
         <div className="mb-10 overflow-x-auto pb-4 scrollbar-hide">
-          <div className="flex space-x-2 md:space-x-3 min-w-max md:justify-center">
+          <div className="flex flex-wrap justify-center" style={{ gap: '0.5rem' }}>
             {menuCategories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
                 className={`px-4 py-2 md:px-6 md:py-3 rounded-full font-medium text-sm md:text-base whitespace-nowrap transition-all duration-300 ${
                   activeCategory === category.id
-                    ? 'bg-red-600 text-white shadow-lg shadow-red-600/30'
+                    ? 'bg-red-600 text-white shadow-lg'
                     : 'bg-[#1A1A1A] text-gray-300 hover:bg-[#242424] hover:text-white'
                 }`}
+                style={{ margin: '0.25rem' }}
               >
                 {category.name}
               </button>
@@ -70,7 +71,7 @@ function Menu() {
 
                 {/* Popular badge */}
                 {item.popular && (
-                  <div className="absolute top-3 left-3 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center space-x-1">
+                  <div className="absolute top-3 left-3 bg-red-600 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center" style={{ gap: '0.25rem' }}>
                     <Flame className="w-3 h-3" />
                     <span>Popular</span>
                   </div>
@@ -94,7 +95,8 @@ function Menu() {
                 {/* Add to Cart Button */}
                 <button
                   onClick={() => addToCart(item)}
-                  className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-semibold flex items-center justify-center space-x-2 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-red-600/30"
+                  className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-semibold flex items-center justify-center transition-all duration-300 group-hover:shadow-lg"
+                  style={{ gap: '0.5rem' }}
                 >
                   <ShoppingCart className="w-5 h-5" />
                   <span>Agregar al carrito</span>
@@ -117,7 +119,8 @@ function Menu() {
             href="/menu_compartir.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors"
+            className="inline-flex items-center bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors"
+            style={{ gap: '0.5rem' }}
           >
             <span>Ver Menú Completo PDF</span>
           </a>

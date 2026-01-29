@@ -57,7 +57,7 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center" style={{ gap: '0.5rem' }}>
             <div className="bg-white p-1 rounded">
               <span className="font-display text-2xl md:text-3xl text-black font-bold tracking-wider">
                 ROJAS
@@ -74,7 +74,7 @@ function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center" style={{ gap: '2rem' }}>
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -85,10 +85,10 @@ function Navbar() {
                 {link.name}
               </a>
             ))}
-          </div>
+          </nav>
 
           {/* Cart and Mobile Menu Button */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center" style={{ gap: '1rem' }}>
             {/* Cart Button */}
             <Link
               to="/carrito"
@@ -121,7 +121,7 @@ function Navbar() {
           isOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="bg-[#1A1A1A] border-t border-gray-800 px-4 py-4 space-y-4">
+        <div className="bg-[#1A1A1A] border-t border-gray-800 px-4 py-4" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           {navLinks.map((link) => (
             <a
               key={link.name}
