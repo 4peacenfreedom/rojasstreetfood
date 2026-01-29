@@ -57,20 +57,12 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center" style={{ gap: '0.5rem' }}>
-            <div className="bg-white p-1 rounded">
-              <span className="font-display text-2xl md:text-3xl text-black font-bold tracking-wider">
-                ROJAS
-              </span>
-            </div>
-            <div className="hidden sm:block">
-              <span className="text-xs text-gray-400 block leading-tight">
-                STREET FOOD
-              </span>
-              <span className="text-xs text-gray-400 block leading-tight">
-                AND GRILL
-              </span>
-            </div>
+          <Link to="/" className="flex items-center">
+            <img
+              src="/logo_claro.svg"
+              alt="Rojas Street Food and Grill"
+              className="h-12 md:h-14 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}

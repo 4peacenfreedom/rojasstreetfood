@@ -1,6 +1,15 @@
 /* Fuente principal - debe ir antes de Tailwind */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap');
 
+/* Fuente personalizada del menú - Splashpoint */
+@font-face {
+  font-family: 'Splashpoint';
+  src: url('/fonts/splashpoint.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
 /* Variables CSS personalizadas */
@@ -29,8 +38,8 @@ body {
 
 /* Tipografía para títulos estilo menú */
 .font-display {
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 0.05em;
+  font-family: 'Splashpoint', 'Bebas Neue', sans-serif;
+  letter-spacing: 0.02em;
 }
 
 /* Scrollbar personalizado */
