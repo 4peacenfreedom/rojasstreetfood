@@ -39,7 +39,7 @@ function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="text-white font-semibold text-lg mb-4">Enlaces Rápidos</h4>
-            <ul className="space-y-2">
+            <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <li>
                 <a href="/#inicio" className="text-gray-400 hover:text-red-500 transition-colors">
                   Inicio
@@ -66,8 +66,8 @@ function Footer() {
           {/* Contact Info */}
           <div>
             <h4 className="text-white font-semibold text-lg mb-4">Contacto</h4>
-            <ul className="space-y-3">
-              <li className="flex items-center space-x-3 text-gray-400">
+            <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <li className="flex items-center text-gray-400" style={{ gap: '0.75rem' }}>
                 <Phone className="w-5 h-5 text-red-500" />
                 <a
                   href={whatsappUrl}
@@ -78,7 +78,7 @@ function Footer() {
                   {restaurantInfo.phone}
                 </a>
               </li>
-              <li className="flex items-center space-x-3 text-gray-400">
+              <li className="flex items-center text-gray-400" style={{ gap: '0.75rem' }}>
                 <MapPin className="w-5 h-5 text-red-500" />
                 <a
                   href={restaurantInfo.googleMapsUrl}
@@ -89,7 +89,7 @@ function Footer() {
                   {restaurantInfo.address}
                 </a>
               </li>
-              <li className="flex items-start space-x-3 text-gray-400">
+              <li className="flex items-start text-gray-400" style={{ gap: '0.75rem' }}>
                 <Clock className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                 <div>
                   <p>{restaurantInfo.schedule.weekdays}</p>
@@ -103,7 +103,7 @@ function Footer() {
           {/* Social Media */}
           <div>
             <h4 className="text-white font-semibold text-lg mb-4">Síguenos</h4>
-            <div className="flex space-x-4">
+            <div className="flex" style={{ gap: '1rem' }}>
               <a
                 href={instagramUrl}
                 target="_blank"
@@ -134,7 +134,7 @@ function Footer() {
             </div>
 
             {/* Social handles */}
-            <div className="mt-4 space-y-1">
+            <div className="mt-4">
               <p className="text-gray-500 text-sm">
                 @{restaurantInfo.instagram}
               </p>
@@ -144,7 +144,7 @@ function Footer() {
 
         {/* Divider */}
         <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row justify-between items-center" style={{ gap: '1rem' }}>
             <p className="text-gray-500 text-sm text-center md:text-left">
               © {currentYear} {restaurantInfo.name}. Todos los derechos reservados.
             </p>

@@ -9,7 +9,7 @@ function QuickInfo() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {/* Horario */}
-          <div className="flex items-center justify-center md:justify-start space-x-4 p-4 rounded-lg bg-[#242424] hover:bg-[#2a2a2a] transition-colors">
+          <div className="flex items-center justify-center md:justify-start p-4 rounded-lg bg-[#242424] hover:bg-[#2a2a2a] transition-colors" style={{ gap: '1rem' }}>
             <div className="flex-shrink-0">
               <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
                 <Clock className="w-6 h-6 text-white" />
@@ -23,7 +23,7 @@ function QuickInfo() {
           </div>
 
           {/* Dirección */}
-          <div className="flex items-center justify-center md:justify-start space-x-4 p-4 rounded-lg bg-[#242424] hover:bg-[#2a2a2a] transition-colors">
+          <div className="flex items-center justify-center md:justify-start p-4 rounded-lg bg-[#242424] hover:bg-[#2a2a2a] transition-colors" style={{ gap: '1rem' }}>
             <div className="flex-shrink-0">
               <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
                 <MapPin className="w-6 h-6 text-white" />
@@ -44,12 +44,13 @@ function QuickInfo() {
           </div>
 
           {/* WhatsApp */}
-          <div className="flex items-center justify-center md:justify-start space-x-4">
+          <div className="flex items-center justify-center md:justify-start" style={{ gap: '1rem' }}>
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-whatsapp w-full md:w-auto justify-center py-4 text-lg"
+              style={{ gap: '0.5rem' }}
             >
               <Phone className="w-6 h-6" />
               <span>{restaurantInfo.phone}</span>
