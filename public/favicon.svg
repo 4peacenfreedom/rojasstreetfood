@@ -1,4 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" rx="20" fill="#DC2626"/>
-  <text x="50" y="65" font-family="Arial Black, sans-serif" font-size="50" font-weight="bold" fill="white" text-anchor="middle">R</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 278.5 326.72">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #981b1e;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1" data-name="Layer 1">
+    <rect class="cls-1" width="278.5" height="326.72"/>
+  </g>
 </svg>

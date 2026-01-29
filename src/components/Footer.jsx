@@ -22,15 +22,12 @@ function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="mb-4">
-              <div className="bg-white inline-block p-2 rounded">
-                <span className="font-display text-2xl text-black font-bold tracking-wider">
-                  ROJAS
-                </span>
-              </div>
+              <img
+                src="/logo_claro.svg"
+                alt="Rojas Street Food and Grill"
+                className="h-16 w-auto"
+              />
             </div>
-            <p className="text-gray-400 mb-4">
-              Street Food and Grill
-            </p>
             <p className="text-red-500 font-display text-xl">
               {restaurantInfo.slogan}
             </p>
