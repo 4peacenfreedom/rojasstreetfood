@@ -1,5 +1,7 @@
+import { useRef, useEffect } from 'react';
 import { Instagram, Phone, Clock, MapPin } from 'lucide-react';
 import { restaurantInfo } from '../data/menuData';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 // TikTok icon component (Lucide doesn't have TikTok)
 const TikTokIcon = ({ className }) => (
@@ -13,14 +15,38 @@ function Footer() {
   const whatsappUrl = `https://wa.me/${restaurantInfo.whatsapp}`;
   const instagramUrl = `https://instagram.com/${restaurantInfo.instagram}`;
   const tiktokUrl = `https://tiktok.com/@${restaurantInfo.tiktok}`;
+  const gridRef = useRef(null);
+
+  useEffect(() => {
+    if (!gridRef.current) return;
+
+    const columns = gridRef.current.querySelectorAll('.footer-column');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          columns.forEach((col, index) => {
+            setTimeout(() => {
+              col.classList.add('is-visible');
+            }, index * 100);
+          });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(gridRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <footer id="contacto" className="bg-[#0A0A0A] pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand Column */}
-          <div className="lg:col-span-1">
+          <div className="footer-column animate-on-scroll lg:col-span-1">
             <div className="mb-4">
               <img
                 src="/logo_claro.svg"
@@ -34,7 +60,7 @@ function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="footer-column animate-on-scroll">
             <h4 className="text-white font-display text-2xl mb-4">Enlaces Rápidos</h4>
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <li>
@@ -61,7 +87,7 @@ function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="footer-column animate-on-scroll">
             <h4 className="text-white font-display text-2xl mb-4">Contacto</h4>
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <li className="flex items-center text-gray-400" style={{ gap: '0.75rem' }}>
@@ -98,7 +124,7 @@ function Footer() {
           </div>
 
           {/* Social Media */}
-          <div>
+          <div className="footer-column animate-on-scroll">
             <h4 className="text-white font-display text-2xl mb-4">Síguenos</h4>
             <div className="flex" style={{ gap: '1rem' }}>
               <a

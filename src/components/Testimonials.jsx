@@ -1,17 +1,45 @@
+import { useRef, useEffect } from 'react';
 import { Star, Facebook } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { testimonials } from '../data/menuData';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 function Testimonials() {
+  const headerRef = useScrollAnimation();
+  const gridRef = useRef(null);
+
+  useEffect(() => {
+    if (!gridRef.current) return;
+
+    const cards = gridRef.current.querySelectorAll('.testimonial-card');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          cards.forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add('is-visible');
+            }, index * 100);
+          });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(gridRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="testimonios" className="py-16 md:py-24 bg-[#1A1A1A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div ref={headerRef} className="text-center mb-12 animate-on-scroll">
           <div className="inline-block mb-4">
             <span className="bg-red-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
               TESTIMONIOS
@@ -49,7 +77,7 @@ function Testimonials() {
         </div>
 
         {/* Testimonials Grid - Desktop */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div ref={gridRef} className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {testimonials.map((testimonial) => (
             <TestimonialCard key={testimonial.id} testimonial={testimonial} />
           ))}
@@ -79,7 +107,7 @@ function Testimonials() {
 
 function TestimonialCard({ testimonial }) {
   return (
-    <div className="bg-[#242424] rounded-2xl p-6 h-full card-hover">
+    <div className="testimonial-card animate-on-scroll bg-[#242424] rounded-2xl p-6 h-full card-hover">
       {/* Header with avatar and info */}
       <div className="flex items-center mb-4" style={{ gap: '1rem' }}>
         <img

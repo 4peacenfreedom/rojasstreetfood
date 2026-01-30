@@ -1,15 +1,40 @@
+import { useRef, useEffect } from 'react';
 import { Clock, MapPin, Phone } from 'lucide-react';
 import { restaurantInfo } from '../data/menuData';
 
 function QuickInfo() {
   const whatsappUrl = `https://wa.me/${restaurantInfo.whatsapp}`;
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const items = containerRef.current.querySelectorAll('.info-card');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add('is-visible');
+            }, index * 150);
+          });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="bg-[#1A1A1A] py-8 border-y border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {/* Horario */}
-          <div className="flex items-center justify-center md:justify-start p-4 rounded-lg bg-[#242424] hover:bg-[#2a2a2a] transition-colors" style={{ gap: '1rem' }}>
+          <div className="info-card animate-on-scroll flex items-center justify-center md:justify-start p-4 rounded-lg bg-[#242424] hover:bg-[#2a2a2a] transition-colors" style={{ gap: '1rem' }}>
             <div className="flex-shrink-0">
               <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
                 <Clock className="w-6 h-6 text-white" />
@@ -23,7 +48,7 @@ function QuickInfo() {
           </div>
 
           {/* Dirección */}
-          <div className="flex items-center justify-center md:justify-start p-4 rounded-lg bg-[#242424] hover:bg-[#2a2a2a] transition-colors" style={{ gap: '1rem' }}>
+          <div className="info-card animate-on-scroll flex items-center justify-center md:justify-start p-4 rounded-lg bg-[#242424] hover:bg-[#2a2a2a] transition-colors" style={{ gap: '1rem' }}>
             <div className="flex-shrink-0">
               <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
                 <MapPin className="w-6 h-6 text-white" />
@@ -44,7 +69,7 @@ function QuickInfo() {
           </div>
 
           {/* WhatsApp */}
-          <div className="flex items-center justify-center md:justify-start" style={{ gap: '1rem' }}>
+          <div className="info-card animate-on-scroll flex items-center justify-center md:justify-start" style={{ gap: '1rem' }}>
             <a
               href={whatsappUrl}
               target="_blank"
