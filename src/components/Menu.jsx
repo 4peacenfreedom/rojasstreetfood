@@ -1,23 +1,66 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ShoppingCart, Star, Flame } from 'lucide-react';
 import { menuCategories, menuItems } from '../data/menuData';
 import { useCart } from '../context/CartContext';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 function Menu() {
   const [activeCategory, setActiveCategory] = useState('hamburguesas');
   const { addToCart } = useCart();
+  const headerRef = useScrollAnimation();
+  const gridRef = useRef(null);
 
   const filteredItems = menuItems.filter(item => item.category === activeCategory);
+
+  // Animate menu cards when they come into view or when category changes
+  useEffect(() => {
+    if (!gridRef.current) return;
+
+    const cards = gridRef.current.querySelectorAll('.menu-card');
+
+    // Reset animations
+    cards.forEach(card => card.classList.remove('is-visible'));
+
+    // Trigger stagger animation
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          cards.forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add('is-visible');
+            }, index * 80);
+          });
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(gridRef.current);
+
+    return () => observer.disconnect();
+  }, [activeCategory]);
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat('es-CR').format(price);
   };
 
   return (
-    <section id="menu" className="py-16 md:py-24 bg-[#121212]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="menu"
+      className="py-16 md:py-24 relative"
+      style={{
+        backgroundImage: 'url(/bg_paper.webp)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-black/85" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div ref={headerRef} className="text-center mb-12 animate-on-scroll">
           <div className="inline-block mb-4">
             <span className="bg-red-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
               NUESTRO MENÚ
@@ -52,11 +95,11 @@ function Menu() {
         </div>
 
         {/* Menu Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className="bg-[#1A1A1A] rounded-2xl overflow-hidden card-hover group"
+              className="menu-card bg-[#1A1A1A] rounded-2xl overflow-hidden card-hover group"
             >
               {/* Image Container */}
               <div className="relative h-48 overflow-hidden">
