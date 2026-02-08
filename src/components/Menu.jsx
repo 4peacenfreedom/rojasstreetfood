@@ -159,7 +159,7 @@ function Menu() {
         {/* View Full Menu PDF Button */}
         <div className="text-center mt-12">
           <a
-            href="/menu_compartir.pdf"
+            href="/menu.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors"
