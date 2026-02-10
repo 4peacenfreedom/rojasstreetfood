@@ -47,13 +47,7 @@ function Menu() {
   return (
     <section
       id="menu"
-      className="py-16 md:py-24 relative"
-      style={{
-        backgroundImage: 'url(/bg_paper.webp)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}
+      className="py-16 md:py-24 relative menu-bg"
     >
       {/* Dark overlay for readability */}
       <div className="absolute inset-0 bg-black/85" />
