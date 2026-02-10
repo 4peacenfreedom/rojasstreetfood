@@ -305,3 +305,26 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ===== Menu Section Background ===== */
+.menu-bg {
+  background-image: url('/bg_paper.webp');
+  background-position: center;
+  background-repeat: repeat;
+  /* Mobile: smaller background size to show texture pattern */
+  background-size: 400px auto;
+  background-attachment: scroll; /* Fixed doesn't work well on mobile */
+}
+
+@media (min-width: 768px) {
+  .menu-bg {
+    background-size: 600px auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu-bg {
+    background-size: 800px auto;
+    background-attachment: fixed; /* Enable fixed only on desktop */
+  }
+}
