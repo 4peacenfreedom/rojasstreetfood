@@ -50,7 +50,7 @@ function Menu() {
       className="py-16 md:py-24 relative menu-bg"
     >
       {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/85" />
+      <div className="absolute inset-0 bg-black/50" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -153,7 +153,7 @@ function Menu() {
         {/* View Full Menu PDF Button */}
         <div className="text-center mt-12">
           <a
-            href="/menu_compartir.pdf"
+            href="/menu.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors"
