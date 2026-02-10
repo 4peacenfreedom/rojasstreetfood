@@ -56,7 +56,7 @@ function Menu() {
       }}
     >
       {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/85" />
+      <div className="absolute inset-0 bg-black/50" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
