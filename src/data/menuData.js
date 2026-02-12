@@ -686,6 +686,6 @@ export const heroSlides = [
     title: 'Picaña a la Parrilla',
     subtitle: 'Cortes premium cocinados al punto perfecto',
     cta: 'Ver Parrilladas',
-    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_1200,q_auto,f_auto/v1770878765/hero_3a_kxjyqf.webp',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_1200,q_auto,f_auto/v1770878769/hero_3a_et35wu.webp',
   },
 ];
