@@ -43,7 +43,9 @@ function QuickInfo() {
             <div>
               <h3 className="text-white font-semibold text-lg">Horario</h3>
               <p className="text-gray-400 text-sm">{restaurantInfo.schedule.weekdays}</p>
-              <p className="text-gray-300">{restaurantInfo.schedule.hours}</p>
+              <p className="text-gray-400 text-sm">{restaurantInfo.schedule.saturday}</p>
+              <p className="text-gray-400 text-sm">{restaurantInfo.schedule.sunday}</p>
+              <p className="text-red-500 text-sm">{restaurantInfo.schedule.closed} cerrado</p>
             </div>
           </div>
 

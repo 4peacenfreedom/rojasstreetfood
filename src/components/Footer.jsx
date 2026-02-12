@@ -116,7 +116,8 @@ function Footer() {
                 <Clock className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                 <div>
                   <p>{restaurantInfo.schedule.weekdays}</p>
-                  <p>{restaurantInfo.schedule.hours}</p>
+                  <p>{restaurantInfo.schedule.saturday}</p>
+                  <p>{restaurantInfo.schedule.sunday}</p>
                   <p className="text-red-500">{restaurantInfo.schedule.closed} cerrado</p>
                 </div>
               </li>
