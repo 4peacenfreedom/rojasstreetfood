@@ -1,7 +1,9 @@
-import { useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Instagram, Phone, Clock, MapPin } from 'lucide-react';
 import { restaurantInfo } from '../data/menuData';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import ClosedModal from './ClosedModal';
+import { useRestaurantStatus } from '../utils/restaurantHours';
 
 // TikTok icon component (Lucide doesn't have TikTok)
 const TikTokIcon = ({ className }) => (
@@ -16,6 +18,15 @@ function Footer() {
   const instagramUrl = `https://instagram.com/${restaurantInfo.instagram}`;
   const tiktokUrl = `https://tiktok.com/@${restaurantInfo.tiktok}`;
   const gridRef = useRef(null);
+  const [isClosedModalOpen, setIsClosedModalOpen] = useState(false);
+  const { isOpen: isRestaurantOpen, closedMessage } = useRestaurantStatus();
+
+  const handleWhatsAppClick = (e) => {
+    if (!isRestaurantOpen) {
+      e.preventDefault();
+      setIsClosedModalOpen(true);
+    }
+  };
 
   useEffect(() => {
     if (!gridRef.current) return;
@@ -91,14 +102,19 @@ function Footer() {
             <h4 className="text-white font-display text-2xl mb-4">Contacto</h4>
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <li className="flex items-center text-gray-400" style={{ gap: '0.75rem' }}>
-                <Phone className="w-5 h-5 text-red-500" />
+                <Phone className={`w-5 h-5 ${isRestaurantOpen ? 'text-red-500' : 'text-gray-600'}`} />
                 <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-red-500 transition-colors"
+                  onClick={handleWhatsAppClick}
+                  className={`transition-colors ${
+                    isRestaurantOpen
+                      ? 'hover:text-red-500'
+                      : 'text-gray-600 cursor-not-allowed'
+                  }`}
                 >
-                  {restaurantInfo.phone}
+                  {isRestaurantOpen ? restaurantInfo.phone : 'Cerrado'}
                 </a>
               </li>
               <li className="flex items-center text-gray-400" style={{ gap: '0.75rem' }}>
@@ -150,7 +166,12 @@ function Footer() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-[#1A1A1A] rounded-full flex items-center justify-center text-gray-400 hover:bg-[#25D366] hover:text-white transition-all duration-300"
+                onClick={handleWhatsAppClick}
+                className={`w-12 h-12 bg-[#1A1A1A] rounded-full flex items-center justify-center transition-all duration-300 ${
+                  isRestaurantOpen
+                    ? 'text-gray-400 hover:bg-[#25D366] hover:text-white'
+                    : 'text-gray-600 cursor-not-allowed'
+                }`}
                 aria-label="WhatsApp"
               >
                 <Phone className="w-6 h-6" />
@@ -178,6 +199,13 @@ function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Closed Modal */}
+      <ClosedModal
+        isOpen={isClosedModalOpen}
+        onClose={() => setIsClosedModalOpen(false)}
+        closedMessage={closedMessage}
+      />
     </footer>
   );
 }

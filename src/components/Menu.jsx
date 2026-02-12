@@ -4,14 +4,18 @@ import { menuCategories, menuItems, categoriesWithExtras } from '../data/menuDat
 import { useCart } from '../context/CartContext';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import ExtrasModal from './ExtrasModal';
+import ClosedModal from './ClosedModal';
+import { useRestaurantStatus } from '../utils/restaurantHours';
 
 function Menu() {
   const [activeCategory, setActiveCategory] = useState('hamburguesas');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isClosedModalOpen, setIsClosedModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const { addToCart } = useCart();
   const headerRef = useScrollAnimation();
   const gridRef = useRef(null);
+  const { isOpen: isRestaurantOpen, closedMessage } = useRestaurantStatus();
 
   const filteredItems = menuItems.filter(item => item.category === activeCategory);
 
@@ -47,8 +51,14 @@ function Menu() {
     return new Intl.NumberFormat('es-CR').format(price);
   };
 
-  // Handle add to cart - show modal if category has extras
+  // Handle add to cart - check if open, then show modal if category has extras
   const handleAddToCart = (item) => {
+    // Check if restaurant is closed
+    if (!isRestaurantOpen) {
+      setIsClosedModalOpen(true);
+      return;
+    }
+
     if (categoriesWithExtras.includes(item.category)) {
       setSelectedProduct(item);
       setIsModalOpen(true);
@@ -150,11 +160,15 @@ function Menu() {
                 {/* Add to Cart Button */}
                 <button
                   onClick={() => handleAddToCart(item)}
-                  className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-semibold flex items-center justify-center transition-all duration-300 group-hover:shadow-lg"
+                  className={`w-full py-3 rounded-xl font-semibold flex items-center justify-center transition-all duration-300 ${
+                    isRestaurantOpen
+                      ? 'bg-red-600 hover:bg-red-700 text-white group-hover:shadow-lg'
+                      : 'bg-gray-700 text-gray-400 cursor-not-allowed'
+                  }`}
                   style={{ gap: '0.5rem' }}
                 >
                   <ShoppingCart className="w-5 h-5" />
-                  <span>Agregar</span>
+                  <span>{isRestaurantOpen ? 'Agregar' : 'Cerrado'}</span>
                 </button>
               </div>
             </div>
@@ -188,6 +202,13 @@ function Menu() {
         onClose={() => setIsModalOpen(false)}
         product={selectedProduct}
         onAddToCart={handleAddWithExtras}
+      />
+
+      {/* Closed Modal */}
+      <ClosedModal
+        isOpen={isClosedModalOpen}
+        onClose={() => setIsClosedModalOpen(false)}
+        closedMessage={closedMessage}
       />
     </section>
   );
