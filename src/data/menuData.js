@@ -59,7 +59,7 @@ export const menuItems = [
     name: 'La Malcriadita',
     description: 'Pan tipo brioche, 1 torta angus estilo smash, queso frito, 1 taco de carne, salsa de la casa, salsa de tomate y papas fritas.',
     price: 4850,
-    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878792/malcriadita_kc3j4g.webp',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878792/malcriada_kcf0fd.webp',
   },
   {
     id: 6,
@@ -76,7 +76,7 @@ export const menuItems = [
     name: 'La Jachudita',
     description: 'Pan tipo brioche, 1 torta angus estilo smash, queso americano, bacón, 2 aros de cebolla, salsa barbacoa y papas fritas.',
     price: 4750,
-    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878807/jachudita_izkq2c.webp',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878807/jachudadoble_psdedq.webp',
   },
   {
     id: 8,
@@ -307,7 +307,7 @@ export const menuItems = [
     name: 'Pechuguitas "Miedo" 24 unidades',
     description: '24 pechuguitas empanizadas con tres salsas a elegir.',
     price: 13600,
-    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878726/pechuguitas24_xgqkqf.webp',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878725/pechuguitasjr_xmbbbd.webp',
   },
   {
     id: 30,
@@ -391,7 +391,7 @@ export const menuItems = [
     name: 'Alitas Rojas 16 unidades',
     description: '16 alitas con dos salsas a elegir: barbacoa, mostaza miel, buffalo, salsa de la casa, parmesano, mango habanero, culantro o pizza.',
     price: 6900,
-    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878442/alitas16_dqjy3c.webp',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878442/alitas_dpmn8d.webp',
     popular: true,
   },
   {
@@ -400,7 +400,7 @@ export const menuItems = [
     name: 'Alitas Rojas 24 unidades',
     description: '24 alitas con tres salsas a elegir: barbacoa, mostaza miel, buffalo, salsa de la casa, parmesano, mango habanero, culantro o pizza.',
     price: 10900,
-    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878442/alitas24_izxj9c.webp',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878442/alitas_dpmn8d.webp',
   },
   {
     id: 61,
@@ -416,7 +416,7 @@ export const menuItems = [
     name: 'Pizzafries',
     description: 'Papas fritas acompañadas de salsa de pizza, queso parmesano, queso mozzarella, carne molida angus y pepperoni.',
     price: 4850,
-    image: 'https://images.unsplash.com/photo-1630384060421-cb20aeb80aaa?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878449/pizzafries_zxqlr6.webp',
   },
   {
     id: 63,
@@ -424,7 +424,7 @@ export const menuItems = [
     name: 'Mozzarella Flats',
     description: 'Orden de 4 mozzarella flats acompañados de salsa de pizza.',
     price: 3950,
-    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878449/mozzarellaflats_xjxqgk.webp',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878443/mozarellaflats_ofg6wp.webp',
   },
 
   // QUESADILLAS
@@ -481,7 +481,7 @@ export const menuItems = [
     name: 'Smoothie de Mora',
     description: 'Smoothie 100% fruta natural de mora.',
     price: 1850,
-    image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878857/mora_pffde5.webp',
   },
   {
     id: 44,
