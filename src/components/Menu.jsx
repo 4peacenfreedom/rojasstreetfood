@@ -1,11 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import { ShoppingCart, Star, Flame } from 'lucide-react';
-import { menuCategories, menuItems } from '../data/menuData';
+import { menuCategories, menuItems, categoriesWithExtras } from '../data/menuData';
 import { useCart } from '../context/CartContext';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import ExtrasModal from './ExtrasModal';
 
 function Menu() {
   const [activeCategory, setActiveCategory] = useState('hamburguesas');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const { addToCart } = useCart();
   const headerRef = useScrollAnimation();
   const gridRef = useRef(null);
@@ -42,6 +45,21 @@ function Menu() {
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat('es-CR').format(price);
+  };
+
+  // Handle add to cart - show modal if category has extras
+  const handleAddToCart = (item) => {
+    if (categoriesWithExtras.includes(item.category)) {
+      setSelectedProduct(item);
+      setIsModalOpen(true);
+    } else {
+      addToCart(item);
+    }
+  };
+
+  // Handle adding product with extras from modal
+  const handleAddWithExtras = (product, extras) => {
+    addToCart({ ...product, extras });
   };
 
   return (
@@ -125,18 +143,18 @@ function Menu() {
                 <h3 className="text-white font-bold text-lg mb-2 line-clamp-1">
                   {item.name}
                 </h3>
-                <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+                <p className="text-gray-400 text-sm mb-4 line-clamp-4 min-h-[4.5rem]">
                   {item.description}
                 </p>
 
                 {/* Add to Cart Button */}
                 <button
-                  onClick={() => addToCart(item)}
+                  onClick={() => handleAddToCart(item)}
                   className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl font-semibold flex items-center justify-center transition-all duration-300 group-hover:shadow-lg"
                   style={{ gap: '0.5rem' }}
                 >
                   <ShoppingCart className="w-5 h-5" />
-                  <span>Agregar al carrito</span>
+                  <span>Agregar</span>
                 </button>
               </div>
             </div>
@@ -163,6 +181,14 @@ function Menu() {
           </a>
         </div>
       </div>
+
+      {/* Extras Modal */}
+      <ExtrasModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        product={selectedProduct}
+        onAddToCart={handleAddWithExtras}
+      />
     </section>
   );
 }

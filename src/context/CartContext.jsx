@@ -12,17 +12,39 @@ const ACTIONS = {
   LOAD_CART: 'LOAD_CART',
 };
 
+// Generate a unique cart ID for items with extras
+function generateCartId(item) {
+  if (!item.extras || item.extras.length === 0) {
+    return `item-${item.id}`;
+  }
+  const extrasKey = item.extras
+    .map(e => `${e.id}-${e.quantity}`)
+    .sort()
+    .join('_');
+  return `item-${item.id}-${extrasKey}`;
+}
+
+// Calculate total price for an item including extras
+function calculateItemTotal(item) {
+  let total = item.price;
+  if (item.extras && item.extras.length > 0) {
+    total += item.extras.reduce((sum, extra) => sum + (extra.price * extra.quantity), 0);
+  }
+  return total;
+}
+
 // Reducer para manejar el estado del carrito
 function cartReducer(state, action) {
   switch (action.type) {
     case ACTIONS.ADD_ITEM: {
-      const existingItem = state.items.find(item => item.id === action.payload.id);
+      const cartId = generateCartId(action.payload);
+      const existingItem = state.items.find(item => item.cartId === cartId);
 
       if (existingItem) {
         return {
           ...state,
           items: state.items.map(item =>
-            item.id === action.payload.id
+            item.cartId === cartId
               ? { ...item, quantity: item.quantity + 1 }
               : item
           ),
@@ -31,30 +53,30 @@ function cartReducer(state, action) {
 
       return {
         ...state,
-        items: [...state.items, { ...action.payload, quantity: 1 }],
+        items: [...state.items, { ...action.payload, cartId, quantity: 1 }],
       };
     }
 
     case ACTIONS.REMOVE_ITEM:
       return {
         ...state,
-        items: state.items.filter(item => item.id !== action.payload),
+        items: state.items.filter(item => item.cartId !== action.payload),
       };
 
     case ACTIONS.UPDATE_QUANTITY: {
-      const { id, quantity } = action.payload;
+      const { cartId, quantity } = action.payload;
 
       if (quantity <= 0) {
         return {
           ...state,
-          items: state.items.filter(item => item.id !== id),
+          items: state.items.filter(item => item.cartId !== cartId),
         };
       }
 
       return {
         ...state,
         items: state.items.map(item =>
-          item.id === id ? { ...item, quantity } : item
+          item.cartId === cartId ? { ...item, quantity } : item
         ),
       };
     }
@@ -112,13 +134,13 @@ export function CartProvider({ children }) {
   };
 
   // Remover item del carrito
-  const removeFromCart = (itemId) => {
-    dispatch({ type: ACTIONS.REMOVE_ITEM, payload: itemId });
+  const removeFromCart = (cartId) => {
+    dispatch({ type: ACTIONS.REMOVE_ITEM, payload: cartId });
   };
 
   // Actualizar cantidad de un item
-  const updateQuantity = (itemId, quantity) => {
-    dispatch({ type: ACTIONS.UPDATE_QUANTITY, payload: { id: itemId, quantity } });
+  const updateQuantity = (cartId, quantity) => {
+    dispatch({ type: ACTIONS.UPDATE_QUANTITY, payload: { cartId, quantity } });
   };
 
   // Limpiar el carrito
@@ -128,7 +150,10 @@ export function CartProvider({ children }) {
 
   // Calcular totales
   const totalItems = state.items.reduce((sum, item) => sum + item.quantity, 0);
-  const totalPrice = state.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  const totalPrice = state.items.reduce((sum, item) => {
+    const itemTotal = calculateItemTotal(item);
+    return sum + (itemTotal * item.quantity);
+  }, 0);
 
   // Generar mensaje para WhatsApp
   const generateWhatsAppMessage = () => {
@@ -137,7 +162,15 @@ export function CartProvider({ children }) {
     let message = '¡Hola! Me gustaría hacer el siguiente pedido:\n\n';
 
     state.items.forEach((item, index) => {
-      message += `${index + 1}. ${item.name} x${item.quantity} - ₡${(item.price * item.quantity).toLocaleString()}\n`;
+      const itemTotal = calculateItemTotal(item);
+      message += `${index + 1}. ${item.name} x${item.quantity} - ₡${(itemTotal * item.quantity).toLocaleString()}\n`;
+
+      // Add extras to the message
+      if (item.extras && item.extras.length > 0) {
+        item.extras.forEach(extra => {
+          message += `   + ${extra.name} x${extra.quantity}\n`;
+        });
+      }
     });
 
     message += `\n*Total: ₡${totalPrice.toLocaleString()}*\n\n`;

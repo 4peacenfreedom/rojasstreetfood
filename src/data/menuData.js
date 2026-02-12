@@ -126,6 +126,23 @@ export const menuItems = [
     price: 4350,
     image: 'https://images.unsplash.com/photo-1550317138-10000687a72b?w=500',
   },
+  {
+    id: 53,
+    category: 'hamburguesas',
+    name: 'La Chineada',
+    description: 'Pan tipo brioche, 2 tortas angus estilo smash, doble queso amarillo, pepinillos, bacón, salsa chipotle y papas fritas.',
+    price: 4750,
+    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500',
+  },
+  {
+    id: 54,
+    category: 'hamburguesas',
+    name: 'La Porquiburguer',
+    description: 'Pan tipo brioche, torta angus estilo smash, pulled pork, bacón, cebolla morada, salsa BBQ y papas fritas.',
+    price: 4550,
+    image: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500',
+    popular: true,
+  },
 
   // SÁNDWICHES
   {
@@ -144,6 +161,15 @@ export const menuItems = [
     description: 'Pan artesanal de especias, pollo a la plancha, tomate, lechuga, salsa de la casa, salsa de tomate y papas fritas en gajos.',
     price: 3750,
     image: 'https://images.unsplash.com/photo-1521390188846-e2a3a97453a0?w=500',
+  },
+  {
+    id: 55,
+    category: 'sandwiches',
+    name: 'El Consentido',
+    description: 'Pan artesanal de especias, carne de res, queso amarillo, pepinillos, cebolla morada, tomate, salsas y papas fritas.',
+    price: 4650,
+    image: 'https://images.unsplash.com/photo-1481070414801-51fd732d7184?w=500',
+    popular: true,
   },
 
   // A LA PARRILLA
@@ -212,6 +238,24 @@ export const menuItems = [
     description: 'Orden de 250g de churrasco a la parrilla, acompañada con papas en gajo y ensalada verde.',
     price: 6850,
     image: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=500',
+  },
+  {
+    id: 56,
+    category: 'parrilla',
+    name: 'Diezmillo',
+    description: 'Orden de 500g de Diezmillo a la parrilla, acompañada con papas en gajo y ensalada verde.',
+    price: 12550,
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=500',
+    popular: true,
+  },
+  {
+    id: 57,
+    category: 'parrilla',
+    name: 'Rib Eye Steak',
+    description: 'Orden de 400g de Rib Eye a la parrilla, acompañada con papas en gajo y ensalada verde.',
+    price: 9250,
+    image: 'https://images.unsplash.com/photo-1558030006-450675393462?w=500',
+    popular: true,
   },
   {
     id: 24,
@@ -333,6 +377,55 @@ export const menuItems = [
     price: 5950,
     image: 'https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?w=500',
   },
+  {
+    id: 58,
+    category: 'streetfood',
+    name: 'Alitas Rojas 8 unidades',
+    description: '8 alitas con una salsa a elegir: barbacoa, mostaza miel, buffalo, salsa de la casa, parmesano, mango habanero, culantro o pizza.',
+    price: 3600,
+    image: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=500',
+  },
+  {
+    id: 59,
+    category: 'streetfood',
+    name: 'Alitas Rojas 16 unidades',
+    description: '16 alitas con dos salsas a elegir: barbacoa, mostaza miel, buffalo, salsa de la casa, parmesano, mango habanero, culantro o pizza.',
+    price: 6900,
+    image: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=500',
+    popular: true,
+  },
+  {
+    id: 60,
+    category: 'streetfood',
+    name: 'Alitas Rojas 24 unidades',
+    description: '24 alitas con tres salsas a elegir: barbacoa, mostaza miel, buffalo, salsa de la casa, parmesano, mango habanero, culantro o pizza.',
+    price: 10900,
+    image: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=500',
+  },
+  {
+    id: 61,
+    category: 'streetfood',
+    name: '2 Tacos con Papas',
+    description: 'Orden de 2 tacos acompañados con papas fritas.',
+    price: 2500,
+    image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500',
+  },
+  {
+    id: 62,
+    category: 'streetfood',
+    name: 'Pizzafries',
+    description: 'Papas fritas acompañadas de salsa de pizza, queso parmesano, queso mozzarella, carne molida angus y pepperoni.',
+    price: 4850,
+    image: 'https://images.unsplash.com/photo-1630384060421-cb20aeb80aaa?w=500',
+  },
+  {
+    id: 63,
+    category: 'streetfood',
+    name: 'Mozzarella Flats',
+    description: 'Orden de 4 mozzarella flats acompañados de salsa de pizza.',
+    price: 3950,
+    image: 'https://images.unsplash.com/photo-1531749668029-2db88e4276c7?w=500',
+  },
 
   // QUESADILLAS
   {
@@ -423,6 +516,22 @@ export const menuItems = [
     image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500',
   },
   {
+    id: 64,
+    category: 'bebidas',
+    name: 'Smoothie de Cas',
+    description: 'Smoothie 100% fruta natural de cas.',
+    price: 1850,
+    image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500',
+  },
+  {
+    id: 65,
+    category: 'bebidas',
+    name: 'Smoothie de Guanábana',
+    description: 'Smoothie 100% fruta natural de guanábana.',
+    price: 1850,
+    image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500',
+  },
+  {
     id: 48,
     category: 'bebidas',
     name: 'Gaseosa 600ml',
@@ -444,18 +553,18 @@ export const menuItems = [
   {
     id: 50,
     category: 'postres',
-    name: 'Queque de Chocolate',
-    description: 'Esponjoso queque de chocolate con cobertura.',
-    price: 2500,
-    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500',
+    name: 'Alfajor',
+    description: 'Delicioso alfajor relleno de manjar.',
+    price: 1500,
+    image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500',
   },
   {
     id: 51,
     category: 'postres',
-    name: 'Torta Chilena',
-    description: 'Tradicional torta chilena con manjar.',
-    price: 2750,
-    image: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500',
+    name: 'Tartaletas',
+    description: 'Tartaletas de frutas frescas con crema pastelera.',
+    price: 2300,
+    image: 'https://images.unsplash.com/photo-1519915028121-7d3463d5b1ff?w=500',
   },
   {
     id: 52,
@@ -516,6 +625,45 @@ export const restaurantInfo = {
     closed: 'Lunes',
   },
 };
+
+// Adicionales por categoría
+export const extras = {
+  // Adicionales para Hamburguesas y Sandwiches (son los mismos)
+  hamburguesas: [
+    { id: 'extra-1', name: 'Extra torta estilo smash', price: 1100 },
+    { id: 'extra-2', name: 'Orden de papas fritas', price: 1500 },
+    { id: 'extra-3', name: 'Extra de queso amarillo', price: 600 },
+    { id: 'extra-4', name: 'Extra de salsa de la casa', price: 400 },
+    { id: 'extra-5', name: 'Extra de bacón', price: 600 },
+    { id: 'extra-6', name: 'Extra de pulled pork', price: 1000 },
+    { id: 'extra-7', name: 'Extra de pepinillos', price: 400 },
+    { id: 'extra-8', name: 'Orden de papa en gajo', price: 1500 },
+  ],
+  sandwiches: [
+    { id: 'extra-1', name: 'Extra torta estilo smash', price: 1100 },
+    { id: 'extra-2', name: 'Orden de papas fritas', price: 1500 },
+    { id: 'extra-3', name: 'Extra de queso amarillo', price: 600 },
+    { id: 'extra-4', name: 'Extra de salsa de la casa', price: 400 },
+    { id: 'extra-5', name: 'Extra de bacón', price: 600 },
+    { id: 'extra-6', name: 'Extra de pulled pork', price: 1000 },
+    { id: 'extra-7', name: 'Extra de pepinillos', price: 400 },
+    { id: 'extra-8', name: 'Orden de papa en gajo', price: 1500 },
+  ],
+  // Adicionales para A La Parrilla (diferentes)
+  parrilla: [
+    { id: 'extra-p1', name: 'Gallo de salchichón', price: 1200 },
+    { id: 'extra-p2', name: 'Gallo de chorizo', price: 1400 },
+    { id: 'extra-p3', name: 'Gallo de pollo', price: 1500 },
+    { id: 'extra-p4', name: 'Gallo de carne asada', price: 1500 },
+    { id: 'extra-p5', name: 'Extra de pico de gallo', price: 500 },
+    { id: 'extra-p6', name: 'Extra de chimichurri argentino', price: 700 },
+    { id: 'extra-p7', name: 'Extra de elote asado', price: 500 },
+    { id: 'extra-p8', name: 'Extra de ensalada dulce', price: 350 },
+  ],
+};
+
+// Categorías que tienen adicionales disponibles
+export const categoriesWithExtras = ['hamburguesas', 'sandwiches', 'parrilla'];
 
 // Slides del hero
 export const heroSlides = [
