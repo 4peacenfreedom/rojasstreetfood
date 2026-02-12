@@ -620,9 +620,10 @@ export const restaurantInfo = {
   address: 'Costa Rica',
   googleMapsUrl: 'https://maps.google.com/?q=Rojas+Street+Food+and+Grill',
   schedule: {
-    weekdays: 'Martes a Domingo',
-    hours: '4 PM - 9:00 PM',
     closed: 'Lunes',
+    weekdays: 'Martes a Viernes: 4pm - 10pm',
+    saturday: 'Sábados: 3pm - 10pm',
+    sunday: 'Domingos: 3pm - 9:30pm',
   },
 };
 
