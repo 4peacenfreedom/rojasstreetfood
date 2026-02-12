@@ -489,7 +489,7 @@ export const menuItems = [
     name: 'Smoothie de Sandía',
     description: 'Smoothie 100% fruta natural de sandía.',
     price: 1850,
-    image: '',
+    image: 'https://images.unsplash.com/photo-1497534446932-c925b458314e?w=500',
   },
   {
     id: 45,
@@ -497,7 +497,7 @@ export const menuItems = [
     name: 'Smoothie de Fresa',
     description: 'Smoothie 100% fruta natural de fresa.',
     price: 1850,
-    image: '',
+    image: 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=500',
   },
   {
     id: 46,
@@ -505,7 +505,7 @@ export const menuItems = [
     name: 'Smoothie de Piña',
     description: 'Smoothie 100% fruta natural de piña.',
     price: 1850,
-    image: '',
+    image: 'https://images.unsplash.com/photo-1589733955941-5eeaf752f6dd?w=500',
   },
   {
     id: 47,
@@ -513,7 +513,7 @@ export const menuItems = [
     name: 'Limonada con Hierbabuena',
     description: 'Refrescante limonada natural con hierbabuena.',
     price: 1850,
-    image: '',
+    image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500',
   },
   {
     id: 64,
@@ -521,7 +521,7 @@ export const menuItems = [
     name: 'Smoothie de Cas',
     description: 'Smoothie 100% fruta natural de cas.',
     price: 1850,
-    image: '',
+    image: 'https://images.unsplash.com/photo-1546173159-315724a31696?w=500',
   },
   {
     id: 65,
@@ -529,7 +529,7 @@ export const menuItems = [
     name: 'Smoothie de Guanábana',
     description: 'Smoothie 100% fruta natural de guanábana.',
     price: 1850,
-    image: '',
+    image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500',
   },
   {
     id: 48,
