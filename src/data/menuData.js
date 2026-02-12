@@ -21,7 +21,7 @@ export const menuItems = [
     name: 'La Rajona',
     description: '2 mini hamburguesas con queso, 2 patacones con pulled pork, 4 pechuguitas empanizadas, papas en gajo y salsas.',
     price: 8950,
-    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878829/larajona_d2wzug.webp',
     popular: true,
   },
   {
@@ -30,7 +30,7 @@ export const menuItems = [
     name: 'La Surtidita',
     description: '4 dados de queso, 4 yuquitas fritas, 4 aros de cebolla, 4 pechuguitas empanizadas, papas fritas y salsas.',
     price: 8950,
-    image: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878831/lasurtida_jidmdf.webp',
     popular: true,
   },
 
@@ -41,7 +41,7 @@ export const menuItems = [
     name: 'La Picañaburguer',
     description: 'Pan tipo brioche, 200g de picaña a la parrilla, cebolla asada, piña asada, salsa de la casa y papas fritas.',
     price: 5950,
-    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878790/picana_dm12vd.webp',
     popular: true,
   },
   {
@@ -50,7 +50,7 @@ export const menuItems = [
     name: 'La Malcriada',
     description: 'Pan tipo brioche, 2 tortas angus estilo smash, queso frito, dos tacos de carnes, salsa de la casa, salsa de tomate y papas fritas.',
     price: 5850,
-    image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878792/malcriada_kcf0fd.webp',
     popular: true,
   },
   {
@@ -59,7 +59,7 @@ export const menuItems = [
     name: 'La Malcriadita',
     description: 'Pan tipo brioche, 1 torta angus estilo smash, queso frito, 1 taco de carne, salsa de la casa, salsa de tomate y papas fritas.',
     price: 4850,
-    image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878792/malcriadita_kc3j4g.webp',
   },
   {
     id: 6,
@@ -67,7 +67,7 @@ export const menuItems = [
     name: 'La Jachuda Doble',
     description: 'Pan tipo brioche, 2 tortas angus estilo smash, doble queso americano, bacón, 2 aros de cebolla, salsa barbacoa y papas fritas.',
     price: 5750,
-    image: 'https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878807/jachudadoble_psdedq.webp',
     popular: true,
   },
   {
@@ -76,7 +76,7 @@ export const menuItems = [
     name: 'La Jachudita',
     description: 'Pan tipo brioche, 1 torta angus estilo smash, queso americano, bacón, 2 aros de cebolla, salsa barbacoa y papas fritas.',
     price: 4750,
-    image: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878807/jachudita_izkq2c.webp',
   },
   {
     id: 8,
@@ -84,7 +84,7 @@ export const menuItems = [
     name: 'La Promete y Medio',
     description: 'Pan tipo brioche, pechuga de pollo empanizada, ensalada dulce de repollo, pepinillos, salsa de la casa y papas fritas.',
     price: 4650,
-    image: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878795/prometeymedio_me3vun.webp',
   },
   {
     id: 9,
@@ -92,7 +92,7 @@ export const menuItems = [
     name: 'La Cuidado Pierde',
     description: 'Pan tipo brioche, pechuga de pollo empanizada, lechuga, tomate, pepinillos, salsa chipotle y papas fritas.',
     price: 4250,
-    image: 'https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878788/cuidadopierde_uo6qqg.webp',
   },
   {
     id: 10,
@@ -100,7 +100,7 @@ export const menuItems = [
     name: 'La Al Suave',
     description: 'Pan tipo brioche, torta angus estilo smash, bacón, lechuga, tomate, pepinillos, salsa de la casa, salsa de tomate y papas fritas.',
     price: 4350,
-    image: 'https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878797/alsuave_egodhf.webp',
   },
   {
     id: 11,
@@ -108,7 +108,7 @@ export const menuItems = [
     name: 'La Caprichosa',
     description: 'Pan tipo brioche, 2 tortas angus estilo smash, queso fundido, jalea de piña y papas fritas.',
     price: 4950,
-    image: 'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878805/caprichosa_cyed5c.webp',
   },
   {
     id: 12,
@@ -116,7 +116,7 @@ export const menuItems = [
     name: 'La Picosita',
     description: 'Pan tipo brioche, torta angus estilo smash, chile jalapeño en trozos, bacón, salsa de queso, salsas y papas fritas.',
     price: 3950,
-    image: 'https://images.unsplash.com/photo-1607013251379-e6eecfffe234?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878793/picosita_noaape.webp',
   },
   {
     id: 13,
@@ -124,7 +124,7 @@ export const menuItems = [
     name: 'Las Chiquis',
     description: '3 mini hamburguesas con queso americano, bacón y salsa de queso para dipear.',
     price: 4350,
-    image: 'https://images.unsplash.com/photo-1550317138-10000687a72b?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878803/chiquis_myg8na.webp',
   },
   {
     id: 53,
@@ -132,7 +132,7 @@ export const menuItems = [
     name: 'La Chineada',
     description: 'Pan tipo brioche, 2 tortas angus estilo smash, doble queso amarillo, pepinillos, bacón, salsa chipotle y papas fritas.',
     price: 4750,
-    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878801/chineada_w5iujx.webp',
   },
   {
     id: 54,
@@ -140,7 +140,7 @@ export const menuItems = [
     name: 'La Porquiburguer',
     description: 'Pan tipo brioche, torta angus estilo smash, pulled pork, bacón, cebolla morada, salsa BBQ y papas fritas.',
     price: 4550,
-    image: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878799/porkyburger_iwmihv.webp',
     popular: true,
   },
 
@@ -151,7 +151,7 @@ export const menuItems = [
     name: 'El Insolente',
     description: 'Pan artesanal de especias, pulled pork, salsa barbacoa, ensalada dulce de repollo, pepinillos y papas fritas en gajos.',
     price: 3950,
-    image: 'https://images.unsplash.com/photo-1481070414801-51fd732d7184?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878564/insolente_bbftlg.webp',
     popular: true,
   },
   {
@@ -160,7 +160,7 @@ export const menuItems = [
     name: 'El Macho',
     description: 'Pan artesanal de especias, pollo a la plancha, tomate, lechuga, salsa de la casa, salsa de tomate y papas fritas en gajos.',
     price: 3750,
-    image: 'https://images.unsplash.com/photo-1521390188846-e2a3a97453a0?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878565/macho_m7ydbw.webp',
   },
   {
     id: 55,
@@ -168,7 +168,7 @@ export const menuItems = [
     name: 'El Consentido',
     description: 'Pan artesanal de especias, carne de res, queso amarillo, pepinillos, cebolla morada, tomate, salsas y papas fritas.',
     price: 4650,
-    image: 'https://images.unsplash.com/photo-1481070414801-51fd732d7184?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878564/consentido_bbzpaw.webp',
     popular: true,
   },
 
@@ -179,7 +179,7 @@ export const menuItems = [
     name: 'El Pincho de Pollo o Cerdo',
     description: 'Pincho de pollo o cerdo con cebolla y chile dulce asado.',
     price: 1300,
-    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878657/pinchopollo_x0w37s.webp',
   },
   {
     id: 17,
@@ -187,7 +187,7 @@ export const menuItems = [
     name: 'Choripan',
     description: 'Clásico con chimichurri argentino o Tico con pico de gallo, acompañado con papas fritas.',
     price: 3350,
-    image: 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878646/choripan_nxuicl.webp',
   },
   {
     id: 18,
@@ -195,7 +195,7 @@ export const menuItems = [
     name: 'Parrillada Personal "Así Sí"',
     description: 'Orden de carne, pollo, chorizo, elote asado y ensalada de repollo dulce.',
     price: 4550,
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878645/asisi_ocb5jd.webp',
     popular: true,
   },
   {
@@ -204,7 +204,7 @@ export const menuItems = [
     name: 'La Gallada',
     description: 'Tres gallos de pollo, carne y salchichón, acompañados con pico de gallo.',
     price: 3450,
-    image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878650/gallada_ajzwth.webp',
   },
   {
     id: 20,
@@ -212,7 +212,7 @@ export const menuItems = [
     name: 'Picaña Grill 250g',
     description: 'Orden de 250g de picaña a la parrilla, acompañada con papas fritas y ensalada de repollo dulce.',
     price: 5850,
-    image: 'https://images.unsplash.com/photo-1558030006-450675393462?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878656/picanagrill_ykt0wi.webp',
     popular: true,
   },
   {
@@ -221,7 +221,7 @@ export const menuItems = [
     name: 'Picaña Grill 350g',
     description: 'Orden de 350g de picaña a la parrilla, acompañada con papas fritas y ensalada de repollo dulce.',
     price: 6950,
-    image: 'https://images.unsplash.com/photo-1558030006-450675393462?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878656/picanagrill_ykt0wi.webp',
   },
   {
     id: 22,
@@ -229,7 +229,7 @@ export const menuItems = [
     name: 'Picaña Grill 450g',
     description: 'Orden de 450g de picaña a la parrilla, acompañada con papas fritas y ensalada de repollo dulce.',
     price: 8250,
-    image: 'https://images.unsplash.com/photo-1558030006-450675393462?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878656/picanagrill_ykt0wi.webp',
   },
   {
     id: 23,
@@ -237,7 +237,7 @@ export const menuItems = [
     name: 'Churrasco',
     description: 'Orden de 250g de churrasco a la parrilla, acompañada con papas en gajo y ensalada verde.',
     price: 6850,
-    image: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878648/churrasco_ddlprf.webp',
   },
   {
     id: 56,
@@ -245,7 +245,7 @@ export const menuItems = [
     name: 'Diezmillo',
     description: 'Orden de 500g de Diezmillo a la parrilla, acompañada con papas en gajo y ensalada verde.',
     price: 12550,
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878649/diezmillo_nkmupu.webp',
     popular: true,
   },
   {
@@ -254,7 +254,7 @@ export const menuItems = [
     name: 'Rib Eye Steak',
     description: 'Orden de 400g de Rib Eye a la parrilla, acompañada con papas en gajo y ensalada verde.',
     price: 9250,
-    image: 'https://images.unsplash.com/photo-1558030006-450675393462?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878660/ribeye_v35ymr.webp',
     popular: true,
   },
   {
@@ -263,7 +263,7 @@ export const menuItems = [
     name: 'Papa Asada Rellena',
     description: 'Papa asada rellena de queso mozzarella con salsa de la casa.',
     price: 1950,
-    image: 'https://images.unsplash.com/photo-1568569350062-ebfa3cb195df?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878652/papa_qih1hx.webp',
   },
   {
     id: 25,
@@ -271,7 +271,7 @@ export const menuItems = [
     name: 'Plátano Maduro con Queso',
     description: 'Plátano maduro a la parrilla con queso derretido.',
     price: 1450,
-    image: 'https://images.unsplash.com/photo-1528751014936-863e6e7a319c?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878659/platano_vbrvcn.webp',
   },
   {
     id: 26,
@@ -279,7 +279,7 @@ export const menuItems = [
     name: 'La Parrilladota',
     description: '2 porciones de carne, 2 de pollo asado, 2 salchichones, 2 chorizos, nachos con queso, 4 yuquitas fritas, tortillas, frijoles y pico de gallo.',
     price: 11950,
-    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878654/parrilladota_u41qse.webp',
     popular: true,
   },
 
@@ -290,7 +290,7 @@ export const menuItems = [
     name: 'Pechuguitas "Miedo" 6 unidades',
     description: '6 pechuguitas empanizadas con una salsa a elegir: barbacoa, mostaza miel, buffalo o salsa de la casa.',
     price: 3800,
-    image: 'https://images.unsplash.com/photo-1562967914-608f82629710?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878447/pechuguitas_xpulnn.webp',
   },
   {
     id: 28,
@@ -298,7 +298,7 @@ export const menuItems = [
     name: 'Pechuguitas "Miedo" 12 unidades',
     description: '12 pechuguitas empanizadas con dos salsas a elegir.',
     price: 7200,
-    image: 'https://images.unsplash.com/photo-1562967914-608f82629710?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878725/pechuguitasjr_xmbbbd.webp',
     popular: true,
   },
   {
@@ -307,7 +307,7 @@ export const menuItems = [
     name: 'Pechuguitas "Miedo" 24 unidades',
     description: '24 pechuguitas empanizadas con tres salsas a elegir.',
     price: 13600,
-    image: 'https://images.unsplash.com/photo-1562967914-608f82629710?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878726/pechuguitas24_xgqkqf.webp',
   },
   {
     id: 30,
@@ -315,7 +315,7 @@ export const menuItems = [
     name: 'Patareds',
     description: 'Orden de 4 canastas de patacón con pulled pork, salsas, salsa de queso y pico de gallo.',
     price: 3850,
-    image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878446/patared_diigui.webp',
     popular: true,
   },
   {
@@ -324,7 +324,7 @@ export const menuItems = [
     name: 'Aros de Cebolla',
     description: 'Orden de 6 aros de cebolla acompañados de salsa de la casa.',
     price: 3000,
-    image: 'https://images.unsplash.com/photo-1639024471283-03518883512d?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878442/arosdecebolla_dioyxq.webp',
   },
   {
     id: 32,
@@ -332,7 +332,7 @@ export const menuItems = [
     name: 'Dados de Queso',
     description: 'Orden de 5 dados de queso acompañados de salsa de la casa.',
     price: 3000,
-    image: 'https://images.unsplash.com/photo-1531749668029-2db88e4276c7?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878442/dados_yxll3x.webp',
   },
   {
     id: 33,
@@ -340,7 +340,7 @@ export const menuItems = [
     name: 'Papas Que Nivel',
     description: 'Papas fritas acompañadas de salsas, salsa de queso, queso parmesano, bacón y carne de torta smash.',
     price: 4750,
-    image: 'https://images.unsplash.com/photo-1630384060421-cb20aeb80aaa?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878445/papasquenivel_owwcvz.webp',
     popular: true,
   },
   {
@@ -349,7 +349,7 @@ export const menuItems = [
     name: 'Yuquitas Fritas',
     description: 'Orden de yuquitas acompañadas con salsa de queso y frijoles molidos.',
     price: 2750,
-    image: 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878452/yucas_rp1wws.webp',
   },
   {
     id: 35,
@@ -357,7 +357,7 @@ export const menuItems = [
     name: 'Picañafries',
     description: 'Papas fritas acompañadas de salsas, salsa de queso, queso parmesano, bacón y carne de picaña a la parrilla.',
     price: 5850,
-    image: 'https://images.unsplash.com/photo-1585109649139-366815a0d713?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878449/picanafries_iqw3on.webp',
     popular: true,
   },
   {
@@ -375,7 +375,7 @@ export const menuItems = [
     name: 'Nachos Estilo Rojas Mixtos',
     description: 'Nachos acompañados de salsas, salsa de queso, frijoles molidos, bacón, pico de gallo con torta smash, pollo a la plancha y pulled pork.',
     price: 5950,
-    image: 'https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878444/nachosrojas_xroj80.webp',
   },
   {
     id: 58,
@@ -383,7 +383,7 @@ export const menuItems = [
     name: 'Alitas Rojas 8 unidades',
     description: '8 alitas con una salsa a elegir: barbacoa, mostaza miel, buffalo, salsa de la casa, parmesano, mango habanero, culantro o pizza.',
     price: 3600,
-    image: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878442/alitas_dpmn8d.webp',
   },
   {
     id: 59,
@@ -391,7 +391,7 @@ export const menuItems = [
     name: 'Alitas Rojas 16 unidades',
     description: '16 alitas con dos salsas a elegir: barbacoa, mostaza miel, buffalo, salsa de la casa, parmesano, mango habanero, culantro o pizza.',
     price: 6900,
-    image: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878442/alitas16_dqjy3c.webp',
     popular: true,
   },
   {
@@ -400,7 +400,7 @@ export const menuItems = [
     name: 'Alitas Rojas 24 unidades',
     description: '24 alitas con tres salsas a elegir: barbacoa, mostaza miel, buffalo, salsa de la casa, parmesano, mango habanero, culantro o pizza.',
     price: 10900,
-    image: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878442/alitas24_izxj9c.webp',
   },
   {
     id: 61,
@@ -408,7 +408,7 @@ export const menuItems = [
     name: '2 Tacos con Papas',
     description: 'Orden de 2 tacos acompañados con papas fritas.',
     price: 2500,
-    image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878451/tacos_wfyiyi.webp',
   },
   {
     id: 62,
@@ -424,7 +424,7 @@ export const menuItems = [
     name: 'Mozzarella Flats',
     description: 'Orden de 4 mozzarella flats acompañados de salsa de pizza.',
     price: 3950,
-    image: 'https://images.unsplash.com/photo-1531749668029-2db88e4276c7?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878449/mozzarellaflats_xjxqgk.webp',
   },
 
   // QUESADILLAS
@@ -434,7 +434,7 @@ export const menuItems = [
     name: 'Quesañas',
     description: 'Orden de 3 quesadillas de picaña a la parrilla, con queso mozzarella, queso americano y ensalada verde.',
     price: 5450,
-    image: 'https://images.unsplash.com/photo-1618040996337-56904b7850b9?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878592/quesanas_dwdagc.webp',
     popular: true,
   },
   {
@@ -443,7 +443,7 @@ export const menuItems = [
     name: 'Quesapollo',
     description: 'Orden de 3 quesadillas de pollo empanizado, con queso mozzarella, queso americano y ensalada verde.',
     price: 4350,
-    image: 'https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878593/quesapollo_nrbuto.webp',
   },
 
   // MENÚ KIDS
@@ -453,7 +453,7 @@ export const menuItems = [
     name: 'Hamburguesa Jr',
     description: 'Pan tipo brioche, torta angus estilo smash, queso amarillo, pepinillos, salsas y papas fritas, acompañada con una Coca-Cola de 250ml.',
     price: 3750,
-    image: 'https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878723/hamburgerjr_o8usmv.webp',
     popular: true,
   },
   {
@@ -462,7 +462,7 @@ export const menuItems = [
     name: 'Pechuguitas Jr',
     description: 'Pechuguitas de pollo y papas fritas, acompañada con una Coca-Cola de 250ml.',
     price: 3750,
-    image: 'https://images.unsplash.com/photo-1562967914-608f82629710?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878725/pechuguitasjr_xmbbbd.webp',
   },
 
   // BEBIDAS
@@ -472,7 +472,7 @@ export const menuItems = [
     name: 'Crema y Horchata',
     description: 'Bebida tradicional costarricense de crema y horchata.',
     price: 1650,
-    image: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878856/cremayhorchata_wvkxld.webp',
     popular: true,
   },
   {
@@ -489,7 +489,7 @@ export const menuItems = [
     name: 'Smoothie de Sandía',
     description: 'Smoothie 100% fruta natural de sandía.',
     price: 1850,
-    image: 'https://images.unsplash.com/photo-1497534446932-c925b458314e?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878857/sandia_izkqjg.webp',
   },
   {
     id: 45,
@@ -497,7 +497,7 @@ export const menuItems = [
     name: 'Smoothie de Fresa',
     description: 'Smoothie 100% fruta natural de fresa.',
     price: 1850,
-    image: 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878857/sandia_izkqjg.webp',
   },
   {
     id: 46,
@@ -505,7 +505,7 @@ export const menuItems = [
     name: 'Smoothie de Piña',
     description: 'Smoothie 100% fruta natural de piña.',
     price: 1850,
-    image: 'https://images.unsplash.com/photo-1589733955941-5eeaf752f6dd?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878857/pina_izkqjg.webp',
   },
   {
     id: 47,
@@ -513,7 +513,7 @@ export const menuItems = [
     name: 'Limonada con Hierbabuena',
     description: 'Refrescante limonada natural con hierbabuena.',
     price: 1850,
-    image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878857/limonada_izkqjg.webp',
   },
   {
     id: 64,
@@ -521,7 +521,7 @@ export const menuItems = [
     name: 'Smoothie de Cas',
     description: 'Smoothie 100% fruta natural de cas.',
     price: 1850,
-    image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878857/cas_izkqjg.webp',
   },
   {
     id: 65,
@@ -529,7 +529,7 @@ export const menuItems = [
     name: 'Smoothie de Guanábana',
     description: 'Smoothie 100% fruta natural de guanábana.',
     price: 1850,
-    image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878857/guanabana_izkqjg.webp',
   },
   {
     id: 48,
@@ -537,7 +537,7 @@ export const menuItems = [
     name: 'Gaseosa 600ml',
     description: 'Coca-Cola regular, Coca-Cola Zero, Fresca, Fanta Naranja, Fanta Kolita o Ginger Ale.',
     price: 1500,
-    image: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878854/cocacola_x7hqyj.webp',
   },
 
   // POSTRES
@@ -547,7 +547,7 @@ export const menuItems = [
     name: 'Tres Leches',
     description: 'Delicioso pastel de tres leches con crema batida.',
     price: 2500,
-    image: 'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878617/tresleches_zjfj7i.webp',
     popular: true,
   },
   {
@@ -556,7 +556,7 @@ export const menuItems = [
     name: 'Alfajor',
     description: 'Delicioso alfajor relleno de manjar.',
     price: 1500,
-    image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878613/alfajor_ykejjy.webp',
   },
   {
     id: 51,
@@ -564,7 +564,7 @@ export const menuItems = [
     name: 'Tartaletas',
     description: 'Tartaletas de frutas frescas con crema pastelera.',
     price: 2300,
-    image: 'https://images.unsplash.com/photo-1519915028121-7d3463d5b1ff?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878616/tartaletas_ljaxps.webp',
   },
   {
     id: 52,
@@ -572,7 +572,7 @@ export const menuItems = [
     name: 'Brownie con Helado',
     description: 'Brownie de chocolate caliente con helado de vainilla y salsa de caramelo.',
     price: 3250,
-    image: 'https://images.unsplash.com/photo-1564355808539-22fda35bed7e?w=500',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878615/brownie_gy2gc3.webp',
     popular: true,
   },
 ];
