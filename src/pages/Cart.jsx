@@ -88,76 +88,153 @@ function Cart() {
                       index !== items.length - 1 ? 'border-b border-gray-800' : ''
                     }`}
                   >
-                    <div className="flex items-start">
-                      {/* Product Image */}
-                      <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden flex-shrink-0">
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          className="w-full h-full object-cover"
-                        />
+                    {/* Mobile Layout - 2x2 Grid */}
+                    <div className="md:hidden">
+                      {/* Row 1: Image | Quantity + Price */}
+                      <div className="flex items-start justify-between mb-3">
+                        {/* Product Image */}
+                        <div className="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+                          <img
+                            src={item.image}
+                            alt={item.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+
+                        {/* Quantity Controls + Price + Remove */}
+                        <div className="flex flex-col items-end">
+                          <div className="flex items-center space-x-2 mb-2">
+                            <button
+                              onClick={() => updateQuantity(item.cartId, item.quantity - 1)}
+                              className="w-8 h-8 bg-[#242424] hover:bg-red-600 rounded-full flex items-center justify-center text-white transition-colors"
+                              aria-label="Reducir cantidad"
+                            >
+                              <Minus className="w-4 h-4" />
+                            </button>
+                            <span className="text-white font-semibold w-6 text-center">
+                              {item.quantity}
+                            </span>
+                            <button
+                              onClick={() => updateQuantity(item.cartId, item.quantity + 1)}
+                              className="w-8 h-8 bg-[#242424] hover:bg-red-600 rounded-full flex items-center justify-center text-white transition-colors"
+                              aria-label="Aumentar cantidad"
+                            >
+                              <Plus className="w-4 h-4" />
+                            </button>
+                          </div>
+                          <p className="text-white font-bold text-lg">
+                            ₡{formatPrice(getItemTotal(item) * item.quantity)}
+                          </p>
+                          <button
+                            onClick={() => removeFromCart(item.cartId)}
+                            className="text-gray-500 hover:text-red-500 transition-colors mt-1"
+                            aria-label="Eliminar producto"
+                          >
+                            <Trash2 className="w-5 h-5" />
+                          </button>
+                        </div>
                       </div>
 
-                      {/* Product Info */}
-                      <div className="flex-1 ml-4">
-                        <h3 className="text-white font-semibold text-lg">
-                          {item.name}
-                        </h3>
-                        <p className="text-gray-400 text-sm line-clamp-1 hidden sm:block">
-                          {item.description}
-                        </p>
-                        <p className="text-red-500 font-bold mt-1">
-                          ₡{formatPrice(item.price)}
-                        </p>
-                      </div>
+                      {/* Row 2: Product Name | Extras */}
+                      <div className="flex justify-between items-start">
+                        {/* Product Name */}
+                        <div className="flex-1 pr-4">
+                          <h3 className="text-white font-semibold">
+                            {item.name}
+                          </h3>
+                          <p className="text-red-500 text-sm">
+                            ₡{formatPrice(item.price)} c/u
+                          </p>
+                        </div>
 
-                      {/* Quantity Controls */}
-                      <div className="flex items-center space-x-2 md:space-x-3 ml-4">
-                        <button
-                          onClick={() => updateQuantity(item.cartId, item.quantity - 1)}
-                          className="w-8 h-8 md:w-10 md:h-10 bg-[#242424] hover:bg-red-600 rounded-full flex items-center justify-center text-white transition-colors"
-                          aria-label="Reducir cantidad"
-                        >
-                          <Minus className="w-4 h-4" />
-                        </button>
-                        <span className="text-white font-semibold w-8 text-center">
-                          {item.quantity}
-                        </span>
-                        <button
-                          onClick={() => updateQuantity(item.cartId, item.quantity + 1)}
-                          className="w-8 h-8 md:w-10 md:h-10 bg-[#242424] hover:bg-red-600 rounded-full flex items-center justify-center text-white transition-colors"
-                          aria-label="Aumentar cantidad"
-                        >
-                          <Plus className="w-4 h-4" />
-                        </button>
-                      </div>
-
-                      {/* Subtotal and Remove */}
-                      <div className="ml-4 md:ml-6 text-right">
-                        <p className="text-white font-bold">
-                          ₡{formatPrice(getItemTotal(item) * item.quantity)}
-                        </p>
-                        <button
-                          onClick={() => removeFromCart(item.cartId)}
-                          className="text-gray-500 hover:text-red-500 transition-colors mt-1"
-                          aria-label="Eliminar producto"
-                        >
-                          <Trash2 className="w-5 h-5" />
-                        </button>
+                        {/* Extras */}
+                        {item.extras && item.extras.length > 0 && (
+                          <div className="text-right">
+                            <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">Adicionales:</p>
+                            {item.extras.map((extra) => (
+                              <p key={extra.id} className="text-gray-400 text-xs">
+                                + {extra.name} x{extra.quantity}
+                                <span className="text-red-500 ml-1">₡{formatPrice(extra.price * extra.quantity)}</span>
+                              </p>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </div>
 
-                    {/* Extras */}
-                    {item.extras && item.extras.length > 0 && (
-                      <div className="mt-3 ml-24 md:ml-28 pl-4 border-l-2 border-red-600">
-                        <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">Adicionales:</p>
-                        {item.extras.map((extra) => (
-                          <p key={extra.id} className="text-gray-400 text-sm">
-                            + {extra.name} x{extra.quantity} <span className="text-red-500">₡{formatPrice(extra.price * extra.quantity)}</span>
+                    {/* Desktop Layout - Horizontal */}
+                    <div className="hidden md:block">
+                      <div className="flex items-start">
+                        {/* Product Image */}
+                        <div className="w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                          <img
+                            src={item.image}
+                            alt={item.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+
+                        {/* Product Info */}
+                        <div className="flex-1 ml-4">
+                          <h3 className="text-white font-semibold text-lg">
+                            {item.name}
+                          </h3>
+                          <p className="text-gray-400 text-sm line-clamp-1">
+                            {item.description}
                           </p>
-                        ))}
+                          <p className="text-red-500 font-bold mt-1">
+                            ₡{formatPrice(item.price)}
+                          </p>
+                        </div>
+
+                        {/* Quantity Controls */}
+                        <div className="flex items-center space-x-3 ml-4">
+                          <button
+                            onClick={() => updateQuantity(item.cartId, item.quantity - 1)}
+                            className="w-10 h-10 bg-[#242424] hover:bg-red-600 rounded-full flex items-center justify-center text-white transition-colors"
+                            aria-label="Reducir cantidad"
+                          >
+                            <Minus className="w-4 h-4" />
+                          </button>
+                          <span className="text-white font-semibold w-8 text-center">
+                            {item.quantity}
+                          </span>
+                          <button
+                            onClick={() => updateQuantity(item.cartId, item.quantity + 1)}
+                            className="w-10 h-10 bg-[#242424] hover:bg-red-600 rounded-full flex items-center justify-center text-white transition-colors"
+                            aria-label="Aumentar cantidad"
+                          >
+                            <Plus className="w-4 h-4" />
+                          </button>
+                        </div>
+
+                        {/* Subtotal and Remove */}
+                        <div className="ml-6 text-right">
+                          <p className="text-white font-bold">
+                            ₡{formatPrice(getItemTotal(item) * item.quantity)}
+                          </p>
+                          <button
+                            onClick={() => removeFromCart(item.cartId)}
+                            className="text-gray-500 hover:text-red-500 transition-colors mt-1"
+                            aria-label="Eliminar producto"
+                          >
+                            <Trash2 className="w-5 h-5" />
+                          </button>
+                        </div>
                       </div>
-                    )}
+
+                      {/* Extras - Desktop */}
+                      {item.extras && item.extras.length > 0 && (
+                        <div className="mt-3 ml-28 pl-4 border-l-2 border-red-600">
+                          <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">Adicionales:</p>
+                          {item.extras.map((extra) => (
+                            <p key={extra.id} className="text-gray-400 text-sm">
+                              + {extra.name} x{extra.quantity} <span className="text-red-500">₡{formatPrice(extra.price * extra.quantity)}</span>
+                            </p>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
