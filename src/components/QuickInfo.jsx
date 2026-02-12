@@ -1,10 +1,14 @@
-import { useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Clock, MapPin, Phone } from 'lucide-react';
 import { restaurantInfo } from '../data/menuData';
+import ClosedModal from './ClosedModal';
+import { useRestaurantStatus } from '../utils/restaurantHours';
 
 function QuickInfo() {
   const whatsappUrl = `https://wa.me/${restaurantInfo.whatsapp}`;
   const containerRef = useRef(null);
+  const [isClosedModalOpen, setIsClosedModalOpen] = useState(false);
+  const { isOpen: isRestaurantOpen, closedMessage } = useRestaurantStatus();
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -28,6 +32,13 @@ function QuickInfo() {
     observer.observe(containerRef.current);
     return () => observer.disconnect();
   }, []);
+
+  const handleWhatsAppClick = (e) => {
+    if (!isRestaurantOpen) {
+      e.preventDefault();
+      setIsClosedModalOpen(true);
+    }
+  };
 
   return (
     <section className="bg-[#1A1A1A] py-8 border-y border-gray-800">
@@ -76,15 +87,27 @@ function QuickInfo() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-whatsapp w-full md:w-auto justify-center py-4 text-lg"
+              onClick={handleWhatsAppClick}
+              className={`w-full md:w-auto justify-center py-4 text-lg flex items-center rounded-full px-6 font-semibold transition-colors ${
+                isRestaurantOpen
+                  ? 'btn-whatsapp'
+                  : 'bg-gray-700 text-gray-400 cursor-not-allowed'
+              }`}
               style={{ gap: '0.5rem' }}
             >
               <Phone className="w-6 h-6" />
-              <span>{restaurantInfo.phone}</span>
+              <span>{isRestaurantOpen ? restaurantInfo.phone : 'Cerrado'}</span>
             </a>
           </div>
         </div>
       </div>
+
+      {/* Closed Modal */}
+      <ClosedModal
+        isOpen={isClosedModalOpen}
+        onClose={() => setIsClosedModalOpen(false)}
+        closedMessage={closedMessage}
+      />
     </section>
   );
 }
