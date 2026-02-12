@@ -489,7 +489,7 @@ export const menuItems = [
     name: 'Smoothie de Sandía',
     description: 'Smoothie 100% fruta natural de sandía.',
     price: 1850,
-    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878857/sandia_izkqjg.webp',
+    image: '',
   },
   {
     id: 45,
@@ -497,7 +497,7 @@ export const menuItems = [
     name: 'Smoothie de Fresa',
     description: 'Smoothie 100% fruta natural de fresa.',
     price: 1850,
-    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878857/sandia_izkqjg.webp',
+    image: '',
   },
   {
     id: 46,
@@ -505,7 +505,7 @@ export const menuItems = [
     name: 'Smoothie de Piña',
     description: 'Smoothie 100% fruta natural de piña.',
     price: 1850,
-    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878857/pina_izkqjg.webp',
+    image: '',
   },
   {
     id: 47,
@@ -513,7 +513,7 @@ export const menuItems = [
     name: 'Limonada con Hierbabuena',
     description: 'Refrescante limonada natural con hierbabuena.',
     price: 1850,
-    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878857/limonada_izkqjg.webp',
+    image: '',
   },
   {
     id: 64,
@@ -521,7 +521,7 @@ export const menuItems = [
     name: 'Smoothie de Cas',
     description: 'Smoothie 100% fruta natural de cas.',
     price: 1850,
-    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878857/cas_izkqjg.webp',
+    image: '',
   },
   {
     id: 65,
@@ -529,7 +529,7 @@ export const menuItems = [
     name: 'Smoothie de Guanábana',
     description: 'Smoothie 100% fruta natural de guanábana.',
     price: 1850,
-    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878857/guanabana_izkqjg.webp',
+    image: '',
   },
   {
     id: 48,
