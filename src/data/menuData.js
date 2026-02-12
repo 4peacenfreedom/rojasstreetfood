@@ -621,7 +621,7 @@ export const restaurantInfo = {
   googleMapsUrl: 'https://maps.google.com/?q=Rojas+Street+Food+and+Grill',
   schedule: {
     weekdays: 'Martes a Domingo',
-    hours: '11:00 AM - 9:00 PM',
+    hours: '4 PM - 9:00 PM',
     closed: 'Lunes',
   },
 };
@@ -672,20 +672,20 @@ export const heroSlides = [
     title: '¡Al Chile Que Rico Está Vara!',
     subtitle: 'Las mejores hamburguesas y parrilladas de Costa Rica',
     cta: 'Ver Menú Completo',
-    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_1200,q_auto,f_auto/v1770878767/hero_2a_enmktl.webp',
   },
   {
     id: 2,
     title: 'Hamburguesas Estilo Smash',
     subtitle: 'Carne angus premium con ingredientes frescos',
     cta: 'Ordenar Ahora',
-    image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=1200',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_1200,q_auto,f_auto/v1770878766/hero_1a_jixq4t.webp',
   },
   {
     id: 3,
     title: 'Picaña a la Parrilla',
     subtitle: 'Cortes premium cocinados al punto perfecto',
     cta: 'Ver Parrilladas',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=1200',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_1200,q_auto,f_auto/v1770878765/hero_3a_kxjyqf.webp',
   },
 ];
