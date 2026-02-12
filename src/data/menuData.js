@@ -679,13 +679,13 @@ export const heroSlides = [
     title: 'Hamburguesas Estilo Smash',
     subtitle: 'Carne angus premium con ingredientes frescos',
     cta: 'Ordenar Ahora',
-    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_1200,q_auto,f_auto/v1770878766/hero_1a_jixq4t.webp',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_1200,q_auto,f_auto/v1770878769/hero_3a_et35wu.webp',
   },
   {
     id: 3,
     title: 'Picaña a la Parrilla',
     subtitle: 'Cortes premium cocinados al punto perfecto',
     cta: 'Ver Parrilladas',
-    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_1200,q_auto,f_auto/v1770878769/hero_3a_et35wu.webp',
+    image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_1200,q_auto,f_auto/v1770878766/hero_1a_jixq4t.webp',
   },
 ];
