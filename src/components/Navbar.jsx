@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ShoppingCart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
@@ -7,7 +7,8 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { totalItems } = useCart();
-  const location = useLocation();
+  const location  = useLocation();
+  const navigate  = useNavigate();
 
   // Detectar scroll para cambiar estilo del navbar
   useEffect(() => {
@@ -25,13 +26,21 @@ function Navbar() {
   }, [location]);
 
   const navLinks = [
-    { name: 'Inicio', href: '/#inicio' },
-    { name: 'Menú', href: '/#menu' },
+    { name: 'Inicio',      href: '/#inicio' },
+    { name: 'Menú',        href: '/#menu' },
     { name: 'Testimonios', href: '/#testimonios' },
-    { name: 'Contacto', href: '/#contacto' },
+    { name: 'Contacto',    href: '/#contacto' },
+    { name: '🏅 Mis Puntos', href: '/mis-puntos', isPage: true },
   ];
 
-  const handleNavClick = (e, href) => {
+  const handleNavClick = (e, link) => {
+    const { href, isPage } = link;
+    if (isPage) {
+      e.preventDefault();
+      navigate(href);
+      setIsOpen(false);
+      return;
+    }
     if (href.startsWith('/#')) {
       e.preventDefault();
       const sectionId = href.substring(2);
@@ -71,7 +80,7 @@ function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
+                onClick={(e) => handleNavClick(e, link)}
                 className="text-white hover:text-red-500 transition-colors font-medium"
               >
                 {link.name}
@@ -118,7 +127,7 @@ function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
+              onClick={(e) => handleNavClick(e, link)}
               className="block text-white hover:text-red-500 transition-colors font-medium py-2"
             >
               {link.name}
