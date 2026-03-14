@@ -210,10 +210,10 @@ function Footer() {
               </p>
               <Link
                 to="/admin"
-                className="text-gray-800 hover:text-gray-600 text-xs transition-colors"
+                className="text-gray-600 hover:text-gray-400 text-xs transition-colors"
                 title="Panel administrativo"
               >
-                ·
+                Admin
               </Link>
             </div>
           </div>
