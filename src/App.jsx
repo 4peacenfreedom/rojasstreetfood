@@ -1,24 +1,42 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
+import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Cart from './pages/Cart';
+import Registro from './pages/Registro';
+import MisPuntos from './pages/MisPuntos';
+import Admin from './pages/Admin';
 import NotFound from './pages/NotFound';
+
+function AppLayout() {
+  const location = useLocation();
+  const isAdmin  = location.pathname.startsWith('/admin');
+
+  return (
+    <div className="min-h-screen bg-[#121212]">
+      {!isAdmin && <Navbar />}
+      <Routes>
+        <Route path="/"           element={<Home />} />
+        <Route path="/carrito"    element={<Cart />} />
+        <Route path="/registro"   element={<Registro />} />
+        <Route path="/mis-puntos" element={<MisPuntos />} />
+        <Route path="/admin"      element={<Admin />} />
+        <Route path="*"           element={<NotFound />} />
+      </Routes>
+    </div>
+  );
+}
 
 function App() {
   return (
-    <CartProvider>
-      <Router>
-        <div className="min-h-screen bg-[#121212]">
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/carrito" element={<Cart />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
-      </Router>
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <Router>
+          <AppLayout />
+        </Router>
+      </CartProvider>
+    </AuthProvider>
   );
 }
 
