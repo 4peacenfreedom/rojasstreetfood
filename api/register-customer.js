@@ -23,15 +23,31 @@ export default async function handler(req, res) {
   // Normalizar teléfono: solo dígitos
   const telefonoNorm = telefono.replace(/\D/g, '');
 
-  // Verificar si el email ya está registrado
-  const { data: existing } = await supabaseAdmin
+  // Verificar duplicados por email O teléfono
+  const { data: existingEmail } = await supabaseAdmin
     .from('customers')
     .select('id')
     .eq('email', email.toLowerCase().trim())
-    .single();
+    .maybeSingle();
 
-  if (existing) {
-    return res.status(409).json({ error: 'Este correo ya está registrado en el programa' });
+  if (existingEmail) {
+    return res.status(409).json({
+      error: 'Este correo ya está registrado en el programa.',
+      canResend: true,
+    });
+  }
+
+  const { data: existingPhone } = await supabaseAdmin
+    .from('customers')
+    .select('id')
+    .eq('telefono', telefonoNorm)
+    .maybeSingle();
+
+  if (existingPhone) {
+    return res.status(409).json({
+      error: 'Este teléfono ya está registrado en el programa.',
+      canResend: true,
+    });
   }
 
   // Insertar cliente
