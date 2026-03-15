@@ -17,39 +17,39 @@ function detectSearchType(query) {
 }
 
 async function findCustomer(query) {
-  const q     = query.trim();
-  const type  = detectSearchType(q);
+  const q    = query.trim();
+  const type = detectSearchType(q);
 
-  let request;
+  // Usamos .limit(1) + primer elemento del array en vez de .maybeSingle(),
+  // así no falla si hay duplicados temporales en la base de datos.
+  let result;
 
   if (type === 'email') {
-    request = supabase
+    result = await supabase
       .from('customers')
       .select('id, nombre, rewards(badges_count, recompensa_activa)')
       .eq('email', q.toLowerCase())
-      .maybeSingle();
+      .limit(1);
 
   } else if (type === 'phone') {
     const digits = normalizePhone(q);
-    request = supabase
+    // Busca dígitos puros (nuevo formato) O con guiones (datos anteriores al fix)
+    result = await supabase
       .from('customers')
       .select('id, nombre, rewards(badges_count, recompensa_activa)')
-      .eq('telefono', digits)
-      .maybeSingle();
+      .or(`telefono.eq.${digits},telefono.eq.${q.trim()}`)
+      .limit(1);
 
   } else {
-    // Nombre: case-insensitive, primer resultado
-    request = supabase
+    result = await supabase
       .from('customers')
       .select('id, nombre, rewards(badges_count, recompensa_activa)')
       .ilike('nombre', `%${q}%`)
-      .limit(1)
-      .maybeSingle();
+      .limit(1);
   }
 
-  const { data, error } = await request;
-  if (error) throw error;
-  return data; // null si no existe
+  if (result.error) throw result.error;
+  return result.data?.[0] ?? null;
 }
 
 function buildMessage(customer) {
