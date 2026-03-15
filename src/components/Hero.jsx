@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 import { ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { heroSlides } from '../data/menuData';
 
 import 'swiper/css';
@@ -69,13 +70,23 @@ function Hero() {
                   </p>
 
                   {/* CTA Button */}
-                  <button
-                    onClick={scrollToMenu}
-                    className="btn-primary text-lg px-8 py-4 rounded-full inline-flex items-center animate-pulse-glow"
-                    style={{ gap: '0.5rem' }}
-                  >
-                    <span>{slide.cta}</span>
-                  </button>
+                  {slide.link ? (
+                    <Link
+                      to={slide.link}
+                      className="btn-primary text-lg px-8 py-4 rounded-full inline-flex items-center animate-pulse-glow"
+                      style={{ gap: '0.5rem' }}
+                    >
+                      <span>{slide.cta}</span>
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={scrollToMenu}
+                      className="btn-primary text-lg px-8 py-4 rounded-full inline-flex items-center animate-pulse-glow"
+                      style={{ gap: '0.5rem' }}
+                    >
+                      <span>{slide.cta}</span>
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

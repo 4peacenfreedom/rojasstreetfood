@@ -2,6 +2,7 @@ import Hero from '../components/Hero';
 import QuickInfo from '../components/QuickInfo';
 import Menu from '../components/Menu';
 import Testimonials from '../components/Testimonials';
+import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
 
 function Home() {
@@ -11,6 +12,7 @@ function Home() {
       <QuickInfo />
       <Menu />
       <Testimonials />
+      <FAQ />
       <Footer />
     </main>
   );
