@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Instagram, Phone, Clock, MapPin } from 'lucide-react';
 import { restaurantInfo } from '../data/menuData';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
@@ -93,6 +94,16 @@ function Footer() {
                 <a href="/carrito" className="text-gray-400 hover:text-red-500 transition-colors">
                   Mi Carrito
                 </a>
+              </li>
+              <li className="pt-2 border-t border-gray-800">
+                <Link to="/registro" className="text-red-500 hover:text-red-400 transition-colors font-medium">
+                  🏅 Programa de Fidelidad
+                </Link>
+              </li>
+              <li>
+                <Link to="/mis-puntos" className="text-gray-400 hover:text-red-500 transition-colors">
+                  Consultar mis puntos
+                </Link>
               </li>
             </ul>
           </div>
@@ -193,9 +204,18 @@ function Footer() {
             <p className="text-gray-500 text-sm text-center md:text-left">
               © {currentYear} {restaurantInfo.name}. Todos los derechos reservados.
             </p>
-            <p className="text-gray-600 text-xs">
-              Hecho con amor en Costa Rica
-            </p>
+            <div className="flex items-center gap-3">
+              <p className="text-gray-600 text-xs">
+                Hecho con amor en Costa Rica
+              </p>
+              <Link
+                to="/admin"
+                className="text-gray-600 hover:text-gray-400 text-xs transition-colors"
+                title="Panel administrativo"
+              >
+                Admin
+              </Link>
+            </div>
           </div>
         </div>
       </div>
