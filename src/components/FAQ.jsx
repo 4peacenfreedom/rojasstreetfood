@@ -10,7 +10,7 @@ const faqs = [
     items: [
       {
         q: '¿Cómo funciona el programa de fidelidad?',
-        a: 'Es muy sencillo: por cada compra de ₡5.000 o más acumulás 1 badge (sello). Al juntar 10 badges —equivalente a ₡50.000 en compras— te ganás ₡6.000 de recompensa para usar en cualquier pedido. Se te avisa por correo cuando llegás al premio.',
+        a: 'Es muy sencillo: por cada compra de ₡5.000 o más acumulás 1 badge (sello). Al juntar 10 badges te ganás ₡6.000 de recompensa para usar en cualquier pedido. Se te avisa por correo cuando llegás al premio.',
       },
       {
         q: '¿Cómo me registro al programa?',
@@ -23,7 +23,7 @@ const faqs = [
       },
       {
         q: '¿Cómo presento el QR para acumular?',
-        a: 'En cada visita al restaurante mostrás el QR al empleado en caja (desde la pantalla de tu teléfono o impreso) y él registra la compra. Si hacés un pedido por llamada, también podés dar tu nombre o teléfono para que lo registren manualmente.',
+        a: 'En cada visita al restaurante mostrás el QR al colaborador en caja (desde la pantalla de tu teléfono o impreso) y él registra la compra. Si hacés un pedido por llamada, también podés dar tu nombre o teléfono para que lo registren manualmente.',
       },
       {
         q: '¿Los badges son transferibles a otra persona?',
@@ -44,7 +44,7 @@ const faqs = [
       },
       {
         q: '¿La recompensa de ₡6.000 se puede usar en cualquier pedido?',
-        a: 'Sí, podés usarla en cualquier pedido, ya sea que lo hagás en el local o por llamada. Solo avisale al empleado que tenés una recompensa pendiente y se aplica directo.',
+        a: 'Sí, podés usarla en cualquier pedido, ya sea que lo hagás en el local o por llamada. Solo avisale al colaborador que tenés una recompensa pendiente y se aplica directo.',
       },
       {
         q: '¿Los badges tienen fecha de vencimiento?',
@@ -59,6 +59,41 @@ const faqs = [
             ingresando tu nombre, correo o teléfono. No necesitás usuario ni contraseña.
           </>
         ),
+      },
+    ],
+  },
+
+  /* ── Promo Cumpleañeros ─────────────────────────────────────── */
+  {
+    category: '🎂 Promo Cumpleañeros',
+    items: [
+      {
+        q: '¿En qué consiste la Promo Cumpleañeros?',
+        a: 'Es nuestra forma de celebrar tu día especial. Durante todo el mes de tu cumpleaños, tenés ₡8.000 a tu favor para gastar en cualquier plato de nuestro menú. Solo necesitás venir acompañado de al menos 3 personas y presentar tu cédula de identidad.',
+      },
+      {
+        q: '¿Cuántos acompañantes necesito?',
+        a: 'Necesitás un mínimo de 3 acompañantes, y cada uno de ellos debe consumir mínimo ₡6.000. ¡Es una celebración como se debe!',
+      },
+      {
+        q: '¿Los ₡8.000 aplican para cualquier plato del menú?',
+        a: '¡Sí! Podés usar los ₡8.000 en cualquier plato de nuestro menú. Elegís lo que más se te antoje.',
+      },
+      {
+        q: '¿Cómo demuestro que es mi mes de cumpleaños?',
+        a: 'Muy fácil, solo presentás tu cédula de identidad en caja. Con eso es suficiente para activar la promo.',
+      },
+      {
+        q: '¿Puedo combinar la promo con el programa de fidelidad?',
+        a: '¡Claro que sí! Si sos parte del programa de fidelidad, tu compra del día igual cuenta para acumular badges. El cumpleaños y los puntos no se pelean. 🎉',
+      },
+      {
+        q: '¿La promo aplica para pedidos por llamada o solo presencial?',
+        a: 'La Promo Cumpleañeros aplica únicamente de forma presencial en el restaurante, ya que requiere presentar la cédula y venir acompañado. ¡Aprovechá para venir a celebrar con nosotros!',
+      },
+      {
+        q: '¿Puedo usar la promo más de una vez en el mes?',
+        a: 'La promo aplica una sola vez durante el mes de tu cumpleaños. ¡Pero ese único momento lo hacemos bien especial!',
       },
     ],
   },
@@ -152,38 +187,51 @@ const faqs = [
       },
       {
         q: '¿Puedo acumular badges si hago un pedido a domicilio?',
-        a: 'Claro que sí. Cuando hacés tu pedido por llamada, solo decile al empleado tu nombre o teléfono registrado y anotamos la compra para que sigan acumulando tus badges.',
+        a: 'Claro que sí. Cuando hacés tu pedido por llamada, solo decile al colaborador tu nombre o teléfono registrado y anotamos la compra para que sigan acumulando tus badges.',
       },
     ],
   },
 ];
 
 export default function FAQ() {
-  const [openItem, setOpenItem] = useState(null); // "cat-item" key
+  // Nivel 1: qué categorías están expandidas (todas colapsadas por defecto)
+  const [openCats, setOpenCats] = useState(new Set());
+  // Nivel 2: qué pregunta individual está abierta
+  const [openItem, setOpenItem] = useState(null);
 
-  // Ref para scroll animations
   const sectionRef = useRef(null);
+
   useEffect(() => {
     if (!sectionRef.current) return;
     const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) e.target.classList.add('is-visible');
-        });
-      },
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); }),
       { threshold: 0.05 }
     );
     sectionRef.current.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
-  function toggle(key) {
+  function toggleCat(ci) {
+    setOpenCats(prev => {
+      const next = new Set(prev);
+      if (next.has(ci)) {
+        next.delete(ci);
+        // Cerrar cualquier pregunta abierta de esta categoría
+        setOpenItem(v => (v?.startsWith(`${ci}-`) ? null : v));
+      } else {
+        next.add(ci);
+      }
+      return next;
+    });
+  }
+
+  function toggleItem(key) {
     setOpenItem(prev => (prev === key ? null : key));
   }
 
   return (
     <section ref={sectionRef} className="bg-[#121212] py-20 px-4">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-7xl mx-auto">
 
         {/* Header */}
         <div className="text-center mb-12 animate-on-scroll">
@@ -194,52 +242,71 @@ export default function FAQ() {
             Preguntas Frecuentes
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto">
-            Todo lo que necesitás saber sobre el programa de fidelidad, dónde encontrarnos y nuestro delivery.
+            Todo lo que necesitás saber sobre el programa de fidelidad, promos, dónde encontrarnos y nuestro delivery.
           </p>
         </div>
 
-        {/* FAQ categories */}
-        <div className="space-y-8">
-          {faqs.map((cat, ci) => (
-            <div key={ci} className="animate-on-scroll" style={{ transitionDelay: `${ci * 80}ms` }}>
-              <h3 className="text-lg font-semibold text-red-500 mb-3 flex items-center gap-2">
-                {cat.category}
-              </h3>
-              <div className="rounded-2xl overflow-hidden border border-gray-800 divide-y divide-gray-800">
-                {cat.items.map((item, ii) => {
-                  const key     = `${ci}-${ii}`;
-                  const isOpen  = openItem === key;
-                  const answer  = typeof item.a === 'function' ? item.a() : item.a;
+        {/* Grid 2 cols x 2 rows — 1 col en mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {faqs.map((cat, ci) => {
+            const isCatOpen = openCats.has(ci);
 
-                  return (
-                    <div key={ii} className="bg-[#1A1A1A]">
-                      <button
-                        onClick={() => toggle(key)}
-                        className="w-full flex items-center justify-between px-5 py-4 text-left gap-4 hover:bg-[#222] transition-colors"
-                        aria-expanded={isOpen}
-                      >
-                        <span className="text-white text-sm font-medium leading-snug">
-                          {item.q}
-                        </span>
-                        <ChevronDown
-                          className={`w-4 h-4 text-red-500 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
-                        />
-                      </button>
+            return (
+              <div
+                key={ci}
+                className="animate-on-scroll rounded-2xl border border-gray-800 overflow-hidden"
+                style={{ transitionDelay: `${ci * 60}ms` }}
+              >
+                {/* ── Nivel 1: header de categoría ── */}
+                <button
+                  onClick={() => toggleCat(ci)}
+                  className={`w-full flex items-center justify-between px-5 py-4 text-left transition-colors
+                    ${isCatOpen ? 'bg-[#1F1F1F]' : 'bg-[#1A1A1A] hover:bg-[#1F1F1F]'}`}
+                >
+                  <span className="text-white font-semibold text-base">
+                    {cat.category}
+                  </span>
+                  <ChevronDown
+                    className={`w-5 h-5 text-red-500 shrink-0 transition-transform duration-300 ${isCatOpen ? 'rotate-180' : ''}`}
+                  />
+                </button>
 
-                      {/* Answer — animated height */}
-                      <div
-                        className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96' : 'max-h-0'}`}
-                      >
-                        <div className="px-5 pb-4 text-gray-400 text-sm leading-relaxed">
-                          {answer}
+                {/* ── Nivel 2: preguntas de la categoría ── */}
+                <div className={`overflow-hidden transition-all duration-400 ${isCatOpen ? 'max-h-[2000px]' : 'max-h-0'}`}>
+                  <div className="divide-y divide-gray-800 border-t border-gray-800">
+                    {cat.items.map((item, ii) => {
+                      const key    = `${ci}-${ii}`;
+                      const isOpen = openItem === key;
+                      const answer = typeof item.a === 'function' ? item.a() : item.a;
+
+                      return (
+                        <div key={ii} className="bg-[#161616]">
+                          <button
+                            onClick={() => toggleItem(key)}
+                            className="w-full flex items-center justify-between px-5 py-3.5 text-left gap-4 hover:bg-[#1C1C1C] transition-colors"
+                            aria-expanded={isOpen}
+                          >
+                            <span className="text-gray-300 text-sm font-medium leading-snug">
+                              {item.q}
+                            </span>
+                            <ChevronDown
+                              className={`w-4 h-4 text-red-500/70 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                            />
+                          </button>
+
+                          <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
+                            <div className="px-5 pb-4 text-gray-400 text-sm leading-relaxed">
+                              {answer}
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                  );
-                })}
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Bottom CTA */}
