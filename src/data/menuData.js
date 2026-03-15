@@ -670,9 +670,10 @@ export const categoriesWithExtras = ['hamburguesas', 'sandwiches', 'parrilla'];
 export const heroSlides = [
   {
     id: 1,
-    title: '¡Al Chile Que Rico Está Vara!',
-    subtitle: 'Las mejores hamburguesas y parrilladas de Costa Rica',
-    cta: 'Ver Menú Completo',
+    title: 'Acumulá Badges, Ganate Premios',
+    subtitle: 'Cada compra de ₡5.000 o más te da 1 badge. Juntá 10 y ganate ₡6.000 de recompensa.',
+    cta: 'Registrarme gratis',
+    link: '/registro',
     image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_1200,q_auto,f_auto/v1770885453/smashburger_p3u3rn.webp',
   },
   {
