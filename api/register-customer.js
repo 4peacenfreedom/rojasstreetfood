@@ -32,7 +32,7 @@ export default async function handler(req, res) {
 
   if (existingEmail) {
     return res.status(409).json({
-      error: 'Este correo ya está registrado en el programa.',
+      error: '¡Upe! Ese correo ya está registrado en el programa. Si perdiste tu QR, usá el link de abajo para que te lo reenviemos.',
       canResend: true,
     });
   }
@@ -45,7 +45,7 @@ export default async function handler(req, res) {
 
   if (existingPhone) {
     return res.status(409).json({
-      error: 'Este teléfono ya está registrado en el programa.',
+      error: '¡Upe! Ya tenemos ese número de teléfono registrado en el programa. Si perdiste tu QR, usá el link de abajo para que te lo reenviemos al correo.',
       canResend: true,
     });
   }
