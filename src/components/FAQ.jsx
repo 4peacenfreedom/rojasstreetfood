@@ -183,7 +183,7 @@ export default function FAQ() {
 
   return (
     <section ref={sectionRef} className="bg-[#121212] py-20 px-4">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-7xl mx-auto">
 
         {/* Header */}
         <div className="text-center mb-12 animate-on-scroll">
@@ -198,8 +198,8 @@ export default function FAQ() {
           </p>
         </div>
 
-        {/* FAQ categories */}
-        <div className="space-y-8">
+        {/* FAQ categories — 3 cols desktop, 1 col mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
           {faqs.map((cat, ci) => (
             <div key={ci} className="animate-on-scroll" style={{ transitionDelay: `${ci * 80}ms` }}>
               <h3 className="text-lg font-semibold text-red-500 mb-3 flex items-center gap-2">
@@ -226,10 +226,7 @@ export default function FAQ() {
                         />
                       </button>
 
-                      {/* Answer — animated height */}
-                      <div
-                        className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96' : 'max-h-0'}`}
-                      >
+                      <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
                         <div className="px-5 pb-4 text-gray-400 text-sm leading-relaxed">
                           {answer}
                         </div>
