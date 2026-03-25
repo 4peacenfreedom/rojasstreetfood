@@ -69,15 +69,15 @@ const faqs = [
     items: [
       {
         q: '¿En qué consiste la Promo Cumpleañeros?',
-        a: 'Es nuestra forma de celebrar tu día especial. Durante todo el mes de tu cumpleaños, tenés ₡8.000 a tu favor para gastar en cualquier plato de nuestro menú. Solo necesitás venir acompañado de al menos 3 personas y presentar tu cédula de identidad.',
+        a: 'Es nuestra forma de celebrar tu día especial. Durante todo el mes de tu cumpleaños, te regalamos un platillo de nuestro menú (no aplica para cortes de carne, no incluye refresco). Solo necesitás venir acompañado de al menos 3 personas que consuman ₡6.000 cada uno, y presentar tu cédula de identidad.',
       },
       {
         q: '¿Cuántos acompañantes necesito?',
         a: 'Necesitás un mínimo de 3 acompañantes, y cada uno de ellos debe consumir mínimo ₡6.000. ¡Es una celebración como se debe!',
       },
       {
-        q: '¿Los ₡8.000 aplican para cualquier plato del menú?',
-        a: '¡Sí! Podés usar los ₡8.000 en cualquier plato de nuestro menú. Elegís lo que más se te antoje.',
+        q: '¿Cuántas veces puedo usar la Promo Cumpleañeros?',
+        a: '¡Todas las veces que quieras durante tu mes de cumpleaños! Solo asegurate de venir cada vez con al menos 3 acompañantes que consuman ₡6.000 cada uno, y tener tu cédula a mano.',
       },
       {
         q: '¿Cómo demuestro que es mi mes de cumpleaños?',
