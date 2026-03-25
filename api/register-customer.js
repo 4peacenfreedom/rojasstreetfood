@@ -159,7 +159,7 @@ function buildWelcomeEmail(nombre, misPuntosUrl) {
                 ¡Upe, ${nombre}! 👋
               </h2>
               <p style="color:#9CA3AF;margin:0 0 24px;line-height:1.6;">
-                Ya sos parte del programa de fidelidad. ¡A acumular badges y ganarte tu recompensa!
+                Ya sos parte del programa de fidelidad. ¡A acumular sellos y ganarte tu recompensa!
               </p>
 
               <!-- Cómo funciona -->
@@ -168,10 +168,10 @@ function buildWelcomeEmail(nombre, misPuntosUrl) {
                   <td style="padding:20px 24px;">
                     <h3 style="margin:0 0 12px;color:#DC2626;font-size:16px;">¿Cómo funciona?</h3>
                     <p style="margin:0 0 8px;color:#D1D5DB;font-size:14px;line-height:1.7;">
-                      🏅 Cada compra de <strong style="color:#fff;">₡5.000 o más</strong> = <strong style="color:#DC2626;">1 badge</strong>
+                      🏅 Cada compra de <strong style="color:#fff;">₡5.000 o más</strong> = <strong style="color:#DC2626;">1 sello</strong>
                     </p>
                     <p style="margin:0 0 8px;color:#D1D5DB;font-size:14px;line-height:1.7;">
-                      🏆 Al juntar <strong style="color:#fff;">10 badges</strong> = <strong style="color:#DC2626;">₡6.000 de recompensa</strong>
+                      🏆 Al juntar <strong style="color:#fff;">10 sellos</strong> = <strong style="color:#DC2626;">₡6.000 de recompensa</strong>
                     </p>
                     <p style="margin:0;color:#D1D5DB;font-size:14px;line-height:1.7;">
                       📱 Presentá tu QR adjunto en caja en cada visita
@@ -189,7 +189,7 @@ function buildWelcomeEmail(nombre, misPuntosUrl) {
                     </p>
                     <p style="margin:0;color:#9CA3AF;font-size:13px;line-height:1.6;">
                       Guardalo en tu teléfono o imprimilo.<br/>
-                      Presentalo en caja en cada visita para acumular badges.
+                      Presentalo en caja en cada visita para acumular sellos.
                     </p>
                   </td>
                 </tr>

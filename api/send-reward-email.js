@@ -116,7 +116,7 @@ function buildCustomerRewardEmail(nombre, appUrl) {
                 ¡Al chile, ${nombre}! 🔥
               </h2>
               <p style="color:#9CA3AF;margin:0 0 24px;line-height:1.6;">
-                Llegaste a tus <strong style="color:#DC2626;">10 badges</strong> y ya tenés tu recompensa lista.
+                Llegaste a tus <strong style="color:#DC2626;">10 sellos</strong> y ya tenés tu recompensa lista.
               </p>
 
               <table width="100%" cellpadding="0" cellspacing="0"
@@ -199,7 +199,7 @@ function buildOwnerRewardEmail(nombre, email) {
             <td style="padding:28px 32px;">
               <p style="color:#D1D5DB;margin:0 0 20px;font-size:15px;line-height:1.6;">
                 El cliente <strong style="color:#fff;">${nombre}</strong> (<em style="color:#9CA3AF;">${email}</em>)
-                acumuló sus <strong style="color:#DC2626;">10 badges</strong> y tiene
+                acumuló sus <strong style="color:#DC2626;">10 sellos</strong> y tiene
                 <strong style="color:#fff;">₡6.000 de recompensa</strong> lista para canjear.
               </p>
               <table width="100%" cellpadding="0" cellspacing="0" style="background:#242424;border-radius:12px;">

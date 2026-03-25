@@ -10,7 +10,7 @@ const faqs = [
     items: [
       {
         q: '¿Cómo funciona el programa de fidelidad?',
-        a: 'Es muy sencillo: por cada compra de ₡5.000 o más acumulás 1 badge (sello). Al juntar 10 badges te ganás ₡6.000 de recompensa para usar en cualquier pedido. Se te avisa por correo cuando llegás al premio.',
+        a: 'Es muy sencillo: por cada compra de ₡5.000 o más acumulás 1 sello. Al juntar 10 sellos te ganás ₡6.000 de recompensa para usar en cualquier pedido. Se te avisa por correo cuando llegás al premio.',
       },
       {
         q: '¿Cómo me registro al programa?',
@@ -26,8 +26,8 @@ const faqs = [
         a: 'En cada visita al restaurante mostrás el QR al colaborador en caja (desde la pantalla de tu teléfono o impreso) y él registra la compra. Si hacés un pedido por llamada, también podés dar tu nombre o teléfono para que lo registren manualmente.',
       },
       {
-        q: '¿Los badges son transferibles a otra persona?',
-        a: 'No. Los badges son personales e intransferibles. Cada cliente tiene su propio QR y su propio historial de puntos. No se pueden combinar ni ceder los puntos de una cuenta a otra.',
+        q: '¿Los sellos son transferibles a otra persona?',
+        a: 'No. Los sellos son personales e intransferibles. Cada cliente tiene su propio QR y su propio historial de puntos. No se pueden combinar ni ceder los puntos de una cuenta a otra.',
       },
       {
         q: '¿Perdí mi QR, qué hago?',
@@ -40,18 +40,18 @@ const faqs = [
       },
       {
         q: '¿Puedo acumular más de una recompensa a la vez?',
-        a: 'No. Una vez que llegás a los 10 badges, el contador se pausa hasta que canjeés tu recompensa en el restaurante. Después del canje empezás un nuevo ciclo desde cero.',
+        a: 'No. Una vez que llegás a los 10 sellos, el contador se pausa hasta que canjeés tu recompensa en el restaurante. Después del canje empezás un nuevo ciclo desde cero.',
       },
       {
         q: '¿La recompensa de ₡6.000 se puede usar en cualquier pedido?',
         a: 'Sí, podés usarla en cualquier pedido, ya sea que lo hagás en el local o por llamada. Solo avisale al colaborador que tenés una recompensa pendiente y se aplica directo.',
       },
       {
-        q: '¿Los badges tienen fecha de vencimiento?',
-        a: 'Por el momento los badges no vencen. Podemos actualizar esta política en el futuro, pero siempre avisaremos con tiempo a los clientes registrados.',
+        q: '¿Los sellos tienen fecha de vencimiento?',
+        a: 'Por el momento los sellos no vencen. Podemos actualizar esta política en el futuro, pero siempre avisaremos con tiempo a los clientes registrados.',
       },
       {
-        q: '¿Cómo consulto cuántos badges tengo?',
+        q: '¿Cómo consulto cuántos sellos tengo?',
         a: () => (
           <>
             Podés revisar tus puntos en cualquier momento en{' '}
@@ -85,7 +85,7 @@ const faqs = [
       },
       {
         q: '¿Puedo combinar la promo con el programa de fidelidad?',
-        a: '¡Claro que sí! Si sos parte del programa de fidelidad, tu compra del día igual cuenta para acumular badges. El cumpleaños y los puntos no se pelean. 🎉',
+        a: '¡Claro que sí! Si sos parte del programa de fidelidad, tu compra del día igual cuenta para acumular sellos. El cumpleaños y los puntos no se pelean. 🎉',
       },
       {
         q: '¿La promo aplica para pedidos por llamada o solo presencial?',
@@ -186,8 +186,8 @@ const faqs = [
         ),
       },
       {
-        q: '¿Puedo acumular badges si hago un pedido a domicilio?',
-        a: 'Claro que sí. Cuando hacés tu pedido por llamada, solo decile al colaborador tu nombre o teléfono registrado y anotamos la compra para que sigan acumulando tus badges.',
+        q: '¿Puedo acumular sellos si hago un pedido a domicilio?',
+        a: 'Claro que sí. Cuando hacés tu pedido por llamada, solo decile al colaborador tu nombre o teléfono registrado y anotamos la compra para que sigan acumulando tus sellos.',
       },
     ],
   },

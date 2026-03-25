@@ -126,7 +126,7 @@ function buildResendEmail(nombre, misPuntosUrl) {
                     </p>
                     <p style="margin:0;color:#9CA3AF;font-size:13px;line-height:1.6;">
                       Guardalo en tu teléfono o imprimilo y presentalo en caja
-                      en tu próxima visita para seguir acumulando badges.
+                      en tu próxima visita para seguir acumulando sellos.
                     </p>
                   </td>
                 </tr>

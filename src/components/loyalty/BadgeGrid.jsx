@@ -18,7 +18,7 @@ export default function BadgeGrid({ count = 0, recompensaActiva = false, size = 
           return (
             <div
               key={i}
-              title={filled ? `Badge ${i + 1}` : 'Por ganar'}
+              title={filled ? `Sello ${i + 1}` : 'Por ganar'}
               className={`
                 ${cls} rounded-full border-2 flex items-center justify-center
                 transition-all duration-300
@@ -46,7 +46,7 @@ export default function BadgeGrid({ count = 0, recompensaActiva = false, size = 
         ) : (
           <>
             <span className="text-white font-semibold">{count}</span>
-            <span className="text-gray-500">/10 badges</span>
+            <span className="text-gray-500">/10 sellos</span>
             {count > 0 && (
               <span className="text-gray-500"> · te faltan {10 - count}</span>
             )}

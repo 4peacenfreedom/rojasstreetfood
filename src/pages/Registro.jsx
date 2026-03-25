@@ -78,8 +78,8 @@ export default function Registro() {
             Programa de Fidelidad
           </h1>
           <p className="text-gray-400 text-sm leading-relaxed">
-            Registrate, recibí tu QR y empezá a acumular badges.<br />
-            <span className="text-red-400 font-medium">₡5.000+ por visita = 1 badge · 10 badges = ₡6.000</span>
+            Registrate, recibí tu QR y empezá a acumular sellos.<br />
+            <span className="text-red-400 font-medium">₡5.000+ por visita = 1 sello · 10 sellos = ₡6.000</span>
           </p>
         </div>
 
@@ -315,8 +315,8 @@ function SuccessView({ result, onDownload }) {
           <h3 className="text-red-500 font-semibold text-sm mb-3">¿Cómo funciona?</h3>
           <ul className="space-y-2 text-sm text-gray-400">
             <li className="flex items-start gap-2"><span>🏅</span> Presentá tu QR en caja en cada visita</li>
-            <li className="flex items-start gap-2"><span>🔥</span> Cada compra de ₡5.000+ = 1 badge</li>
-            <li className="flex items-start gap-2"><span>🏆</span> Al llegar a 10 badges = ₡6.000 de recompensa</li>
+            <li className="flex items-start gap-2"><span>🔥</span> Cada compra de ₡5.000+ = 1 sello</li>
+            <li className="flex items-start gap-2"><span>🏆</span> Al llegar a 10 sellos = ₡6.000 de recompensa</li>
           </ul>
         </div>
 

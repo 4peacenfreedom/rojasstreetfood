@@ -27,7 +27,7 @@ export default function CustomerTable() {
   useEffect(() => { fetchCustomers(); }, [fetchCustomers]);
 
   async function handleRedeem(customerId) {
-    if (!window.confirm('¿Confirmar canje de la recompensa de ₡6.000? Esto reiniciará el contador de badges a 0.')) return;
+    if (!window.confirm('¿Confirmar canje de la recompensa de ₡6.000? Esto reiniciará el contador de sellos a 0.')) return;
 
     setRedeeming(customerId);
     const { error } = await supabase
