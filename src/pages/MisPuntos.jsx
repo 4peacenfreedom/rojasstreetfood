@@ -73,7 +73,7 @@ function buildMessage(customer) {
       type: 'zero',
       nombre: customer.nombre,
       badges,
-      text: 'Aún no tenés badges acumulados. ¡Cada compra de ₡5.000 o más te da un badge. Vení a comer y empezá a acumular!',
+      text: 'Aún no tenés sellos acumulados. ¡Cada compra de ₡5.000 o más te da un sello. Vení a comer y empezá a acumular!',
     };
   }
 
@@ -81,7 +81,7 @@ function buildMessage(customer) {
     type: 'progress',
     nombre: customer.nombre,
     badges,
-    text: `¡Upe! Tenés ${badges} badge${badges !== 1 ? 's' : ''} acumulado${badges !== 1 ? 's' : ''}. Te faltan solo ${10 - badges} para ganarte ₡6.000 de recompensa. ¡Seguí viniendo!`,
+    text: `¡Upe! Tenés ${badges} sello${badges !== 1 ? 's' : ''} acumulado${badges !== 1 ? 's' : ''}. Te faltan solo ${10 - badges} para ganarte ₡6.000 de recompensa. ¡Seguí viniendo!`,
   };
 }
 
@@ -133,7 +133,7 @@ export default function MisPuntos() {
             Mis Puntos
           </h1>
           <p className="text-gray-400 text-sm">
-            Consultá tus badges acumulados ingresando tu nombre, correo o teléfono.
+            Consultá tus sellos acumulados ingresando tu nombre, correo o teléfono.
           </p>
         </div>
 
@@ -245,7 +245,7 @@ function NotFoundCard() {
       <span className="text-4xl block mb-3">🤔</span>
       <p className="text-gray-300 text-sm leading-relaxed mb-4">
         Hmmm, no encontramos esa información. ¿Ya te registraste en nuestro programa?
-        Si no, llenás el formulario, recibís tu QR y empezás a acumular badges desde
+        Si no, llenás el formulario, recibís tu QR y empezás a acumular sellos desde
         tu próxima visita. ¡Te esperamos!
       </p>
       <Link to="/registro" className="btn-primary inline-block text-sm">

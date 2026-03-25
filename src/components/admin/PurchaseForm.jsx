@@ -115,7 +115,7 @@ export default function PurchaseForm({ customer, reward, onDone, onClear }) {
           {newBadges.activa && (
             <div className="mt-4 bg-yellow-900/30 border border-yellow-600 rounded-xl p-4 text-center">
               <p className="text-yellow-300 font-semibold text-sm">
-                🏆 ¡Llegó a 10 badges! Se enviaron los emails de recompensa.
+                🏆 ¡Llegó a 10 sellos! Se enviaron los emails de recompensa.
               </p>
             </div>
           )}
@@ -157,7 +157,7 @@ export default function PurchaseForm({ customer, reward, onDone, onClear }) {
               🏆 Este cliente tiene una recompensa de ₡6.000 pendiente de canjear.
             </p>
             <p className="text-yellow-400/70 text-xs mt-1">
-              No se pueden agregar más badges hasta que la canjee.
+              No se pueden agregar más sellos hasta que la canjee.
             </p>
           </div>
         </div>
@@ -183,8 +183,8 @@ export default function PurchaseForm({ customer, reward, onDone, onClear }) {
             {montoNum > 0 && (
               <p className={`text-xs mt-1 ${wouldGetBadge ? 'text-green-400' : 'text-gray-500'}`}>
                 {wouldGetBadge
-                  ? `✓ Califica para badge (${badges + 1}/10)`
-                  : `Mínimo ₡${MIN_PURCHASE.toLocaleString('es-CR')} para obtener badge`}
+                  ? `✓ Califica para sello (${badges + 1}/10)`
+                  : `Mínimo ₡${MIN_PURCHASE.toLocaleString('es-CR')} para obtener sello`}
               </p>
             )}
           </div>
