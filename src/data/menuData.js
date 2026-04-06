@@ -40,7 +40,7 @@ export const menuItems = [
     category: 'hamburguesas',
     name: 'La Picañaburguer',
     description: 'Pan tipo brioche, 200g de picaña a la parrilla, cebolla asada, piña asada, salsa de la casa y papas fritas.',
-    price: 5950,
+    price: 6950,
     image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878790/picana_dm12vd.webp',
     popular: true,
   },
