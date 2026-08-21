@@ -35,11 +35,11 @@ function Menu() {
           cards.forEach((card, index) => {
             setTimeout(() => {
               card.classList.add('is-visible');
-            }, index * 80);
+            }, index * 40);
           });
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.05 }
     );
 
     observer.observe(gridRef.current);
