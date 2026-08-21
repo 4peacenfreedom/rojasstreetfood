@@ -10,6 +10,8 @@ const ACTIONS = {
   UPDATE_QUANTITY: 'UPDATE_QUANTITY',
   CLEAR_CART: 'CLEAR_CART',
   LOAD_CART: 'LOAD_CART',
+  SET_ORDER_TYPE: 'SET_ORDER_TYPE',
+  SET_TABLE_NUMBER: 'SET_TABLE_NUMBER',
 };
 
 // Generate a unique cart ID for items with extras
@@ -93,6 +95,18 @@ function cartReducer(state, action) {
         items: action.payload,
       };
 
+    case ACTIONS.SET_ORDER_TYPE:
+      return {
+        ...state,
+        orderType: action.payload,
+      };
+
+    case ACTIONS.SET_TABLE_NUMBER:
+      return {
+        ...state,
+        tableNumber: action.payload,
+      };
+
     default:
       return state;
   }
@@ -100,7 +114,11 @@ function cartReducer(state, action) {
 
 // Proveedor del contexto
 export function CartProvider({ children }) {
-  const [state, dispatch] = useReducer(cartReducer, { items: [] });
+  const [state, dispatch] = useReducer(cartReducer, {
+    items: [],
+    orderType: 'llevar', // 'mesa' o 'llevar'
+    tableNumber: '',
+  });
   const [toast, setToast] = useState(null);
 
   // Cargar carrito desde localStorage al iniciar
@@ -109,7 +127,13 @@ export function CartProvider({ children }) {
     if (savedCart) {
       try {
         const parsedCart = JSON.parse(savedCart);
-        dispatch({ type: ACTIONS.LOAD_CART, payload: parsedCart });
+        dispatch({ type: ACTIONS.LOAD_CART, payload: parsedCart.items || parsedCart });
+        if (parsedCart.orderType) {
+          dispatch({ type: ACTIONS.SET_ORDER_TYPE, payload: parsedCart.orderType });
+        }
+        if (parsedCart.tableNumber) {
+          dispatch({ type: ACTIONS.SET_TABLE_NUMBER, payload: parsedCart.tableNumber });
+        }
       } catch (error) {
         console.error('Error loading cart from localStorage:', error);
       }
@@ -118,8 +142,12 @@ export function CartProvider({ children }) {
 
   // Guardar carrito en localStorage cuando cambie
   useEffect(() => {
-    localStorage.setItem('rojas-cart', JSON.stringify(state.items));
-  }, [state.items]);
+    localStorage.setItem('rojas-cart', JSON.stringify({
+      items: state.items,
+      orderType: state.orderType,
+      tableNumber: state.tableNumber,
+    }));
+  }, [state.items, state.orderType, state.tableNumber]);
 
   // Mostrar toast
   const showToast = (message) => {
@@ -148,6 +176,20 @@ export function CartProvider({ children }) {
     dispatch({ type: ACTIONS.CLEAR_CART });
   };
 
+  // Establecer tipo de orden
+  const setOrderType = (type) => {
+    dispatch({ type: ACTIONS.SET_ORDER_TYPE, payload: type });
+    // Limpiar número de mesa si cambia a llevar
+    if (type === 'llevar') {
+      dispatch({ type: ACTIONS.SET_TABLE_NUMBER, payload: '' });
+    }
+  };
+
+  // Establecer número de mesa
+  const setTableNumber = (number) => {
+    dispatch({ type: ACTIONS.SET_TABLE_NUMBER, payload: number });
+  };
+
   // Calcular totales
   const totalItems = state.items.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = state.items.reduce((sum, item) => {
@@ -160,6 +202,13 @@ export function CartProvider({ children }) {
     if (state.items.length === 0) return '';
 
     let message = '¡Hola! Me gustaría hacer el siguiente pedido:\n\n';
+
+    // Agregar tipo de orden
+    message += `📍 *${state.orderType === 'mesa' ? 'Para comer aquí' : 'Para llevar'}*\n`;
+    if (state.orderType === 'mesa' && state.tableNumber) {
+      message += `🪑 Mesa: *${state.tableNumber}*\n`;
+    }
+    message += '\n';
 
     state.items.forEach((item, index) => {
       const itemTotal = calculateItemTotal(item);
@@ -181,12 +230,16 @@ export function CartProvider({ children }) {
 
   const value = {
     items: state.items,
+    orderType: state.orderType,
+    tableNumber: state.tableNumber,
     totalItems,
     totalPrice,
     addToCart,
     removeFromCart,
     updateQuantity,
     clearCart,
+    setOrderType,
+    setTableNumber,
     generateWhatsAppMessage,
     toast,
   };

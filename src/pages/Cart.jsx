@@ -7,11 +7,15 @@ import Footer from '../components/Footer';
 function Cart() {
   const {
     items,
+    orderType,
+    tableNumber,
     totalItems,
     totalPrice,
     removeFromCart,
     updateQuantity,
     clearCart,
+    setOrderType,
+    setTableNumber,
     generateWhatsAppMessage,
   } = useCart();
 
@@ -237,6 +241,54 @@ function Cart() {
                     </div>
                   </div>
                 ))}
+              </div>
+
+              {/* Order Type Selection */}
+              <div className="bg-[#1A1A1A] rounded-2xl p-6">
+                <h3 className="text-white font-semibold text-lg mb-4">
+                  Tipo de Orden
+                </h3>
+
+                {/* Order Type Buttons */}
+                <div className="grid grid-cols-2 gap-3 mb-4">
+                  <button
+                    onClick={() => setOrderType('llevar')}
+                    className={`py-4 px-6 rounded-xl font-medium transition-all ${
+                      orderType === 'llevar'
+                        ? 'bg-red-600 text-white shadow-lg shadow-red-600/30'
+                        : 'bg-[#242424] text-gray-400 hover:bg-[#2A2A2A]'
+                    }`}
+                  >
+                    🥡 Para Llevar
+                  </button>
+                  <button
+                    onClick={() => setOrderType('mesa')}
+                    className={`py-4 px-6 rounded-xl font-medium transition-all ${
+                      orderType === 'mesa'
+                        ? 'bg-red-600 text-white shadow-lg shadow-red-600/30'
+                        : 'bg-[#242424] text-gray-400 hover:bg-[#2A2A2A]'
+                    }`}
+                  >
+                    🪑 Para Comer Aquí
+                  </button>
+                </div>
+
+                {/* Table Number Input */}
+                {orderType === 'mesa' && (
+                  <div className="mt-4">
+                    <label htmlFor="tableNumber" className="block text-gray-400 text-sm mb-2">
+                      Número de Mesa
+                    </label>
+                    <input
+                      type="text"
+                      id="tableNumber"
+                      value={tableNumber}
+                      onChange={(e) => setTableNumber(e.target.value)}
+                      placeholder="Ej: 5"
+                      className="w-full px-4 py-3 bg-[#242424] text-white rounded-xl border border-gray-800 focus:border-red-600 focus:outline-none transition-colors"
+                    />
+                  </div>
+                )}
               </div>
 
               {/* Order Summary */}
