@@ -235,8 +235,8 @@ export const menuItems = [
     id: 23,
     category: 'parrilla',
     name: 'Churrasco',
-    description: 'Orden de 250g de churrasco a la parrilla, acompañada con papas en gajo y ensalada verde.',
-    price: 6850,
+    description: 'Orden de 300g de churrasco a la parrilla, acompañada con papas en gajo y ensalada verde.',
+    price: 8550,
     image: 'https://res.cloudinary.com/dkpfptjvm/image/upload/w_500,q_auto,f_auto/v1770878648/churrasco_ddlprf.webp',
   },
   {
