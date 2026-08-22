@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { ShoppingCart, Star, Flame, Menu as MenuIcon } from 'lucide-react';
+import { ShoppingCart, Star, Flame } from 'lucide-react';
 import { menuCategories, menuItems, categoriesWithExtras } from '../data/menuData';
 import { useCart } from '../context/CartContext';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
@@ -85,16 +85,6 @@ function Menu() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div ref={headerRef} className="text-center mb-12 animate-on-scroll relative">
-          {/* Menu Button - Fixed position */}
-          <button
-            onClick={() => setIsCategorySelectorOpen(true)}
-            className="fixed top-24 right-6 z-40 flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
-            style={{ gap: '0.5rem' }}
-          >
-            <MenuIcon className="w-5 h-5" />
-            <span>MENÚ</span>
-          </button>
-
           <div className="inline-block mb-4">
             <span className="bg-red-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
               NUESTRO MENÚ
@@ -103,9 +93,17 @@ function Menu() {
           <h2 className="font-display text-4xl md:text-6xl text-white mb-4">
             ¡AL CHILE QUE RICO!
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-6">
             Descubrí nuestra variedad de hamburguesas, parrilladas y street food con el mejor sabor costarricense
           </p>
+
+          {/* Opciones Button - Centered on mobile, fixed on desktop */}
+          <button
+            onClick={() => setIsCategorySelectorOpen(true)}
+            className="mx-auto md:fixed md:top-24 md:right-6 z-40 flex items-center justify-center bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            <span>OPCIONES</span>
+          </button>
         </div>
 
         {/* Category Tabs - Hidden, now using MenuCategorySelector */}

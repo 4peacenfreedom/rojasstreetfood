@@ -143,6 +143,7 @@
   letter-spacing: 0.02em;
   transition: color 0.3s ease;
   will-change: transform;
+  font-family: 'Splashpoint', sans-serif;
 }
 
 /* Force horizontal text when menu is open */
@@ -179,6 +180,14 @@
 
   .category-selector-container .menu-content-wrapper {
     padding: 2rem 1.5rem;
+  }
+
+  .category-selector-container .menu-bg {
+    background-image: url('/bg_paper.webp');
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 400px auto;
+    background-color: #1A1A1A;
   }
 }
 
