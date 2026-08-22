@@ -8,6 +8,7 @@ import Registro from './pages/Registro';
 import MisPuntos from './pages/MisPuntos';
 import Admin from './pages/Admin';
 import NotFound from './pages/NotFound';
+import KineticMenuDemo from './pages/KineticMenuDemo';
 
 function AppLayout() {
   const location = useLocation();
@@ -23,6 +24,7 @@ function AppLayout() {
         <Route path="/mis-puntos" element={<MisPuntos />} />
         <Route path="/admin"      element={<Admin />} />
         <Route path="*"           element={<NotFound />} />
+        <Route path="/menu-demo" element={<KineticMenuDemo />} />
       </Routes>
     </div>
   );

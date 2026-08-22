@@ -1,0 +1,189 @@
+/* Menu Category Selector Styles - Based on 21st.dev Kinetic Menu */
+
+.category-selector-container {
+  --color-primary: #dc2626;
+  --color-dark: #131313;
+  --cubic-default: cubic-bezier(0.65, 0.05, 0, 1);
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.nav-overlay-wrapper {
+  position: absolute;
+  inset: 0;
+  display: none;
+  pointer-events: none;
+}
+
+.nav-overlay-wrapper[data-nav="open"] {
+  pointer-events: auto;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.category-selector-container .menu-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 600px;
+  transform: translateX(120%);
+  z-index: 10;
+}
+
+.category-selector-container .menu-bg {
+  position: absolute;
+  inset: 0;
+  background: #1A1A1A;
+  overflow: hidden;
+}
+
+/* Backdrop Layers */
+.backdrop-layer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1A1A1A 0%, #262626 100%);
+  transform: translateX(101%);
+}
+
+.backdrop-layer.first {
+  background: linear-gradient(135deg, #262626 0%, #1A1A1A 100%);
+}
+
+.backdrop-layer.second {
+  background: linear-gradient(135deg, #1F1F1F 0%, #2A2A2A 100%);
+}
+
+/* Abstract Shapes */
+.ambient-background-shapes {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.bg-shape {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.bg-shape.active {
+  opacity: 1;
+}
+
+.shape-element {
+  opacity: 0;
+  transform-origin: center;
+}
+
+/* Menu Content */
+.category-selector-container .menu-content-wrapper {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4rem 3rem;
+}
+
+.category-selector-container .menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 500px;
+}
+
+.category-selector-container .menu-list-item {
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.nav-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  text-decoration: none;
+  text-align: left;
+  background: none;
+  border: none;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  transform: translateX(10px);
+  background: rgba(220, 38, 38, 0.1);
+}
+
+.nav-link-text {
+  position: relative;
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease;
+  will-change: transform;
+}
+
+/* Force horizontal text when menu is open */
+.nav-overlay-wrapper[data-nav="open"] .nav-link-text {
+  transform: none !important;
+}
+
+.nav-link:hover .nav-link-text {
+  color: #dc2626;
+}
+
+.nav-link-hover-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(220, 38, 38, 0.08));
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 12px;
+}
+
+.nav-link:hover .nav-link-hover-bg {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-content {
+    max-width: 100%;
+  }
+
+  .nav-link-text {
+    font-size: 2rem;
+  }
+
+  .category-selector-container .menu-content-wrapper {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-link-text {
+    font-size: 1.5rem;
+  }
+}

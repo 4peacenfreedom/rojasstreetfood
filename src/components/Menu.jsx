@@ -1,18 +1,20 @@
 import { useState, useEffect, useRef } from 'react';
-import { ShoppingCart, Star, Flame } from 'lucide-react';
+import { ShoppingCart, Star, Flame, Menu as MenuIcon } from 'lucide-react';
 import { menuCategories, menuItems, categoriesWithExtras } from '../data/menuData';
 import { useCart } from '../context/CartContext';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import ExtrasModal from './ExtrasModal';
 import ClosedModal from './ClosedModal';
 import { useRestaurantStatus } from '../utils/restaurantHours';
+import MenuCategorySelector from './MenuCategorySelector';
 
 function Menu() {
   const [activeCategory, setActiveCategory] = useState('hamburguesas');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isClosedModalOpen, setIsClosedModalOpen] = useState(false);
+  const [isCategorySelectorOpen, setIsCategorySelectorOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const { addToCart } = useCart();
+  const { addToCart} = useCart();
   const headerRef = useScrollAnimation();
   const gridRef = useRef(null);
   const { isOpen: isRestaurantOpen, closedMessage } = useRestaurantStatus();
@@ -82,7 +84,17 @@ function Menu() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div ref={headerRef} className="text-center mb-12 animate-on-scroll">
+        <div ref={headerRef} className="text-center mb-12 animate-on-scroll relative">
+          {/* Menu Button - Fixed position */}
+          <button
+            onClick={() => setIsCategorySelectorOpen(true)}
+            className="fixed top-24 right-6 z-40 flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+            style={{ gap: '0.5rem' }}
+          >
+            <MenuIcon className="w-5 h-5" />
+            <span>MENÚ</span>
+          </button>
+
           <div className="inline-block mb-4">
             <span className="bg-red-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
               NUESTRO MENÚ
@@ -96,25 +108,7 @@ function Menu() {
           </p>
         </div>
 
-        {/* Category Tabs */}
-        <div className="mb-10 overflow-x-auto pb-4 scrollbar-hide">
-          <div className="flex flex-wrap justify-center" style={{ gap: '0.5rem' }}>
-            {menuCategories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
-                className={`px-4 py-2 md:px-6 md:py-3 rounded-full font-medium text-sm md:text-base whitespace-nowrap transition-all duration-300 ${
-                  activeCategory === category.id
-                    ? 'bg-red-600 text-white shadow-lg'
-                    : 'bg-[#1A1A1A] text-gray-300 hover:bg-[#242424] hover:text-white'
-                }`}
-                style={{ margin: '0.25rem' }}
-              >
-                {category.name}
-              </button>
-            ))}
-          </div>
-        </div>
+        {/* Category Tabs - Hidden, now using MenuCategorySelector */}
 
         {/* Menu Grid */}
         <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -195,6 +189,15 @@ function Menu() {
           </a>
         </div>
       </div>
+
+      {/* Menu Category Selector */}
+      <MenuCategorySelector
+        categories={menuCategories}
+        activeCategory={activeCategory}
+        onCategoryChange={setActiveCategory}
+        isOpen={isCategorySelectorOpen}
+        onClose={() => setIsCategorySelectorOpen(false)}
+      />
 
       {/* Extras Modal */}
       <ExtrasModal
