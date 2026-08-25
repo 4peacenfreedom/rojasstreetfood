@@ -17,15 +17,17 @@ function AppLayout() {
   return (
     <div className="min-h-screen bg-[#121212]">
       {!isAdmin && <Navbar />}
-      <Routes>
-        <Route path="/"           element={<Home />} />
-        <Route path="/carrito"    element={<Cart />} />
-        <Route path="/registro"   element={<Registro />} />
-        <Route path="/mis-puntos" element={<MisPuntos />} />
-        <Route path="/admin"      element={<Admin />} />
-        <Route path="*"           element={<NotFound />} />
-        <Route path="/menu-demo" element={<KineticMenuDemo />} />
-      </Routes>
+      <main id="main-content">
+        <Routes>
+          <Route path="/"           element={<Home />} />
+          <Route path="/carrito"    element={<Cart />} />
+          <Route path="/registro"   element={<Registro />} />
+          <Route path="/mis-puntos" element={<MisPuntos />} />
+          <Route path="/admin"      element={<Admin />} />
+          <Route path="*"           element={<NotFound />} />
+          <Route path="/menu-demo" element={<KineticMenuDemo />} />
+        </Routes>
+      </main>
     </div>
   );
 }

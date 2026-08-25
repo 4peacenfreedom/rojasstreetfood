@@ -31,14 +31,30 @@ function Hero() {
         loop={true}
         className="h-full w-full"
       >
-        {heroSlides.map((slide) => (
+        {heroSlides.map((slide, index) => (
           <SwiperSlide key={slide.id}>
             <div className="relative h-full w-full">
-              {/* Background Image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${slide.image})` }}
-              />
+              {/* Background Image - Primera slide optimizada para LCP */}
+              {index === 0 ? (
+                <img
+                  src={slide.image}
+                  srcSet={`
+                    ${slide.image.replace('w_1200', 'w_800,q_75')} 800w,
+                    ${slide.image.replace('w_1200', 'w_1200,q_80')} 1200w,
+                    ${slide.image.replace('w_1200', 'w_1920,q_80')} 1920w
+                  `}
+                  sizes="100vw"
+                  alt={slide.title}
+                  fetchpriority="high"
+                  loading="eager"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              ) : (
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${slide.image})` }}
+                />
+              )}
 
               {/* Overlay */}
               <div className="hero-overlay absolute inset-0" />

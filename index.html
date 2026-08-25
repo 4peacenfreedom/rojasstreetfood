@@ -4,26 +4,102 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Rojas Street Food and Grill - Las mejores hamburguesas y parrilladas de Costa Rica. ¡Al chile que rico está vara!" />
-    <meta name="keywords" content="hamburguesas, parrilla, comida rápida, Costa Rica, street food, picaña, grill" />
+
+    <!-- Primary Meta Tags -->
+    <title>Rojas Street Food and Grill | Hamburguesas y Parrilladas en Costa Rica</title>
+    <meta name="title" content="Rojas Street Food and Grill | Hamburguesas y Parrilladas" />
+    <meta name="description" content="Las mejores hamburguesas artesanales y carnes a la parrilla en Costa Rica. Picaña premium, hamburguesas gourmet y más. Sistema de lealtad: acumulá sellos y ganá premios. ¡Al chile que rico está!" />
+    <meta name="keywords" content="hamburguesas costa rica, parrilla, picaña, street food, comida rápida, hamburguesas artesanales, grill, carnes asadas, restaurante san josé" />
     <meta name="author" content="Rojas Street Food and Grill" />
+    <link rel="canonical" href="https://www.rojasstreetfood.com" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Rojas Street Food and Grill" />
+    <meta property="og:url" content="https://www.rojasstreetfood.com/" />
+    <meta property="og:title" content="Rojas Street Food and Grill | Hamburguesas y Parrilladas" />
     <meta property="og:description" content="Las mejores hamburguesas y parrilladas de Costa Rica. ¡Al chile que rico está vara!" />
+    <meta property="og:image" content="https://res.cloudinary.com/dkpfptjvm/image/upload/w_1200,h_630,c_fill,q_auto,f_auto/v1770885453/smashburger_p3u3rn.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_CR" />
+    <meta property="og:site_name" content="Rojas Street Food and Grill" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Rojas Street Food and Grill" />
-    <meta name="twitter:description" content="Las mejores hamburguesas y parrilladas de Costa Rica" />
+    <meta name="twitter:url" content="https://www.rojasstreetfood.com/" />
+    <meta name="twitter:title" content="Rojas Street Food and Grill | Hamburguesas y Parrilladas" />
+    <meta name="twitter:description" content="Las mejores hamburguesas y parrilladas de Costa Rica. ¡Al chile que rico está!" />
+    <meta name="twitter:image" content="https://res.cloudinary.com/dkpfptjvm/image/upload/w_1200,h_630,c_fill,q_auto,f_auto/v1770885453/smashburger_p3u3rn.webp" />
 
     <!-- Theme Color -->
     <meta name="theme-color" content="#DC2626" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121212" />
 
-    <title>Rojas Street Food and Grill | Hamburguesas y Parrilladas</title>
+    <!-- Performance: DNS Prefetch & Preconnect -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+
+    <!-- Critical: Preload Hero Image (LCP) -->
+    <link
+      rel="preload"
+      as="image"
+      href="https://res.cloudinary.com/dkpfptjvm/image/upload/w_800,q_75,f_auto/v1770885453/smashburger_p3u3rn.webp"
+      media="(max-width: 768px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="https://res.cloudinary.com/dkpfptjvm/image/upload/w_1920,q_80,f_auto/v1770885453/smashburger_p3u3rn.webp"
+      media="(min-width: 769px)"
+      fetchpriority="high"
+    />
+
+    <!-- Preload Custom Font -->
+    <link
+      rel="preload"
+      href="/fonts/splashpoint.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+
+    <!-- Google Fonts with display=swap -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Rojas Street Food and Grill",
+      "image": "https://res.cloudinary.com/dkpfptjvm/image/upload/v1770885453/smashburger_p3u3rn.webp",
+      "description": "Restaurante de hamburguesas artesanales y carnes a la parrilla en Costa Rica",
+      "servesCuisine": ["Hamburguesas", "Parrilladas", "Street Food"],
+      "priceRange": "₡₡",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CR",
+        "addressLocality": "Costa Rica"
+      },
+      "url": "https://www.rojasstreetfood.com",
+      "telephone": "+506-XXXX-XXXX",
+      "acceptsReservations": "False",
+      "menu": "https://www.rojasstreetfood.com/#menu"
+    }
+    </script>
   </head>
   <body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-to-content">Saltar al contenido principal</a>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

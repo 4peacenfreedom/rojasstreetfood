@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# imarketingcr - archivos privados del cliente
+supabase.env
+info.md

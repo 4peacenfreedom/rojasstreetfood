@@ -1,0 +1,13 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow admin pages
+Disallow: /admin
+Disallow: /admin/*
+
+# Disallow cart (no need to index)
+Disallow: /carrito
+
+# Sitemap
+Sitemap: https://www.rojasstreetfood.com/sitemap.xml
